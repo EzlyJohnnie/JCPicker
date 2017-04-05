@@ -1,5 +1,10 @@
 package nz.co.jclib.jcpicklib;
 
+import android.support.v4.app.Fragment;
+
+import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
+import nz.co.jclib.jcpicklib.ui.JCPickerHostFragment;
+
 /**
  * Created by Johnnie on 28/03/17.
  */
@@ -16,4 +21,12 @@ public class JCPickerClient {
     }
 
     private JCPickerClient() {}
+
+    public Fragment getPickerFragment(){
+        return getPickerFragment(null);
+    }
+
+    public Fragment getPickerFragment(JCPickerEnterOption enterOption){
+        return JCPickerHostFragment.getInstance(enterOption);
+    }
 }

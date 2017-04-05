@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/JCPicker/jcpicklib/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="b623dd26f45b75c3c04189fc38447db0753bf294">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/JCPicker-jcpicklib-unspecified_a9b2eeafdd0f87c7329bf4588496542261c58ff5.jar" />
+    </item>
+
+</items>
