@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="0.5dp"
+    android:background="@color/jc_transparent">
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_file_icon"
+            app:layout_widthPercent="100%"
+            app:layout_aspectRatio="100%"/>
+
+        <View
+            android:id="@+id/overlay"
+            app:layout_widthPercent="100%"
+            app:layout_aspectRatio="100%"
+            android:background="@color/jc_transparent_black_50"
+            android:visibility="gone"/>
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/check_box"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"/>
+</RelativeLayout>

@@ -48,6 +48,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$supportLibrariesVersion"
     compile "com.android.support:support-v4:$supportLibrariesVersion"
     compile "com.android.support:recyclerview-v7:$supportLibrariesVersion"
+    compile "com.android.support:percent:$supportLibrariesVersion"
 
     //google
     compile 'com.google.code.gson:gson:2.8.0'

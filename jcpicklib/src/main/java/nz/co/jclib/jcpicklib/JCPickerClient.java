@@ -1,8 +1,11 @@
 package nz.co.jclib.jcpicklib;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
+import nz.co.jclib.jcpicklib.ui.JCPickerActivity;
 import nz.co.jclib.jcpicklib.ui.JCPickerHostFragment;
 
 /**
@@ -22,11 +25,23 @@ public class JCPickerClient {
 
     private JCPickerClient() {}
 
+    public static void reset(){
+        instance = null;
+    }
+
     public Fragment getPickerFragment(){
         return getPickerFragment(null);
     }
 
     public Fragment getPickerFragment(JCPickerEnterOption enterOption){
         return JCPickerHostFragment.getInstance(enterOption);
+    }
+
+    public void startPickerActivity(Activity activity){
+        startPickerActivity(activity, null);
+    }
+
+    public void startPickerActivity(Activity activity, JCPickerEnterOption enterOption){
+        JCPickerActivity.createAndstartActivity(activity, enterOption);
     }
 }

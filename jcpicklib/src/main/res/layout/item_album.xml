@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0.5dp"
+    android:background="@drawable/clickable_item_bg_color">
+
+    <ImageView
+        android:id="@+id/iv_file_icon"
+        app:layout_widthPercent="100%"
+        app:layout_aspectRatio="100%"/>
+
+    <nz.co.jclib.jcpicklib.ui.Widget.JCTextView
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/iv_file_icon"
+        android:gravity="center"
+        android:singleLine="true"
+        android:background="@color/jc_transparent"
+        android:textColor="@color/jc_file_name_color"
+        android:text="album name"/>
+
+
+
+</android.support.percent.PercentRelativeLayout>

@@ -15,16 +15,28 @@ import nz.co.jclib.jcpicklib.utils.JCPreferenceHelper;
 public class JCPickerEnterOption implements Parcelable {
     private final static String SHARED_PREF_KEY = "sharedPrefFileKey_enterOption";
 
-    @Expose
-    private int pickType;
-
-    //TODO: to implement default path
-    @Expose
-    private String path;
+    @Expose private int pickType;
+    @Expose private String path;
+    @Expose private String albumName;
+    private String parentName;
 
     public static JCPickerEnterOption createDefaultOption(Context context){
         return JCPreferenceHelper.fromSharedPreference(context, SHARED_PREF_KEY, SHARED_PREF_KEY, JCPickerEnterOption.class);
     }
+
+    public static JCPickerEnterOption createPickImageOption(){
+        JCPickerEnterOption enterOption = new JCPickerEnterOption();
+        enterOption.setPickType(JCConstant.PICK_TYPE_IMAGE);
+        return enterOption;
+    }
+
+    public static JCPickerEnterOption createPickFileOption(){
+        JCPickerEnterOption enterOption = new JCPickerEnterOption();
+        enterOption.setPickType(JCConstant.PICK_TYPE_FILE);
+        return enterOption;
+    }
+
+    public JCPickerEnterOption() {}
 
     public int getPickType() {
         return pickType;
@@ -42,16 +54,43 @@ public class JCPickerEnterOption implements Parcelable {
         this.path = path;
     }
 
-    protected JCPickerEnterOption(Parcel in) {
-        pickType = in.readInt();
-        path = in.readString();
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    @Override
+    public JCPickerEnterOption clone(){
+        JCPickerEnterOption result = new JCPickerEnterOption();
+        result.setPickType(pickType);
+        result.setPath(path);
+        result.setAlbumName(albumName);
+        result.setParentName(parentName);
+
+        return result;
     }
 
 
 
 
-
-
+    ///////////////////////////////////// Parcelable ////////////////////////////////////
+    protected JCPickerEnterOption(Parcel in) {
+        pickType = in.readInt();
+        path = in.readString();
+        albumName = in.readString();
+        parentName = in.readString();
+    }
 
     @Override
     public int describeContents() {
@@ -62,6 +101,8 @@ public class JCPickerEnterOption implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(pickType);
         dest.writeString(path);
+        dest.writeString(albumName);
+        dest.writeString(parentName);
     }
 
     @SuppressWarnings("unused")

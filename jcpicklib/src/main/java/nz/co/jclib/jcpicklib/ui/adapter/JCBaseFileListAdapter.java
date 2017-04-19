@@ -1,0 +1,208 @@
+package nz.co.jclib.jcpicklib.ui.adapter;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import nz.co.jclib.jcpicklib.R;
+import nz.co.jclib.jcpicklib.data.model.JCFile;
+import nz.co.jclib.jcpicklib.ui.adapter.viewHolder.JCEmptyFileListItem;
+import nz.co.jclib.jcpicklib.ui.adapter.viewHolder.JCFileListItem;
+import nz.co.jclib.jcpicklib.utils.FileUtils;
+
+/**
+ * Created by Johnnie on 18/04/17.
+ */
+public class JCBaseFileListAdapter extends RecyclerView.Adapter {
+    private static final int VIEW_TYPE_FILE = 0;
+    private static final int VIEW_TYPE_NO_FILE = 1;
+
+    protected ArrayList<JCFile> files;
+    protected ArrayList<JCFile> selectedFiles;
+
+    protected FileListAdapterListener mFileListAdapterListener;
+
+    public JCBaseFileListAdapter() {
+        selectedFiles = new ArrayList<>();
+    }
+
+    public void setFiles(ArrayList<JCFile> files) {
+        this.files = files;
+        notifyDataSetChanged();
+    }
+
+    public void setOnItemClickedListener(FileListAdapterListener onItemClickedListener) {
+        this.mFileListAdapterListener = onItemClickedListener;
+    }
+
+    public ArrayList<JCFile> getSelectedFiles() {
+        return selectedFiles;
+    }
+
+    public void resetSelectedFiles() {
+        this.selectedFiles = new ArrayList<>();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return files != null && files.size() > 0 ? VIEW_TYPE_FILE : VIEW_TYPE_NO_FILE;
+    }
+
+    @Override public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        RecyclerView.ViewHolder viewHolder = null;
+        switch (viewType){
+            case VIEW_TYPE_FILE:
+                viewHolder = getFileCell(parent);
+                break;
+            case VIEW_TYPE_NO_FILE:
+                viewHolder = geNotFileCell(parent);
+                break;
+        }
+        return viewHolder;
+    }
+
+    protected RecyclerView.ViewHolder geNotFileCell(ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_empty_file, parent, false);
+        return new JCEmptyFileListItem(view);
+    }
+
+    protected RecyclerView.ViewHolder getFileCell(ViewGroup parent) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_file, parent, false);
+        return new JCFileListItem(view);
+    }
+
+
+    @Override public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        switch (getItemViewType(position)){
+            case VIEW_TYPE_FILE:
+                setupItemView(holder, position);
+                break;
+            case VIEW_TYPE_NO_FILE:
+                if(holder instanceof JCEmptyFileListItem) {
+                    setupNoFileCell((JCEmptyFileListItem) holder);
+                }
+                break;
+        }
+    }
+
+    protected void setupNoFileCell(JCEmptyFileListItem holder) {
+    }
+
+    protected void setupItemView(RecyclerView.ViewHolder holder, final int position) {
+        final JCFileListItem viewHolder = (JCFileListItem) holder;
+        final JCFile file = files.get(position);
+
+
+        if(viewHolder.txt_size != null){
+            viewHolder.txt_size.setVisibility(file.isFile() ? View.VISIBLE : View.GONE);
+            viewHolder.txt_size.setText(FileUtils.getSizeString(file.getSize(), false));
+        }
+
+        if(viewHolder.txt_name != null){
+            viewHolder.txt_name.setText(file.getName());
+        }
+
+        //setup image
+        if(file.isImage()){
+            Picasso.with(viewHolder.iv_icon.getContext())
+                    .load(new File(file.getUrl()))
+                    .fit()
+                    .centerCrop()
+                    .placeholder(getFileIconPlaceHolder(file))
+                    .into(viewHolder.iv_icon);
+        }
+        else if(file.isVideo()){
+            //TODO
+        }
+        else{
+            viewHolder.iv_icon.setImageDrawable(viewHolder.iv_icon.getContext().getResources().getDrawable(file.getFileImageResID()));
+        }
+
+        int padding = getPadding(viewHolder.iv_icon.getContext(), file);
+        viewHolder.iv_icon.setPadding(padding, padding, padding, padding);
+
+        //setup listener
+        if(viewHolder.checkBox != null){
+            viewHolder.setSelect(file.isSelected());
+
+            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewHolder.itemView.performClick();
+                }
+            });
+        }
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mFileListAdapterListener != null){
+                    if(file.isFolder() || file.isAlbum()){
+                        mFileListAdapterListener.onOpenFolder(file, position);
+                    }else{
+                        file.setSelected(!file.isSelected());
+                        if(file.isSelected()){
+                            selectedFiles.add(file);
+                        }
+                        else{
+                            selectedFiles.remove(file);
+                        }
+                        viewHolder.setSelect(file.isSelected());
+                        if(viewHolder.overlay != null){
+                            viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
+                        }
+                    }
+                }
+            }
+        });
+
+
+        if(file.isImage()){
+            viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    if(mFileListAdapterListener != null){
+                        mFileListAdapterListener.onOpenImage(file, position);
+                    }
+                    return false;
+                }
+            });
+        }
+    }
+
+    protected int getFileIconPlaceHolder(JCFile file){
+        return file.isImage() ?  R.drawable.jcpick_placeholder : file.getFileImageResID();
+    }
+
+    protected int getPadding(Context context, JCFile file) {
+        return 0;
+    }
+
+    @Override
+    public int getItemCount() {
+        int count = 0;
+        if(files != null){
+            count = files.size() == 0 ? 1: files.size();
+        }
+        return count;
+    }
+
+
+
+
+    public interface FileListAdapterListener {
+        void onOpenFolder(JCFile file, int position);
+        void onOpenImage(JCFile file, int position);
+    }
+}
