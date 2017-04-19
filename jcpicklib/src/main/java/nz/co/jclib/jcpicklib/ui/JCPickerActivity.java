@@ -9,8 +9,6 @@ import nz.co.jclib.jcpicklib.JCPickerClient;
 import nz.co.jclib.jcpicklib.R;
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseActivity;
-import nz.co.jclib.jcpicklib.ui.fragment.JCPickerBaseFileListFragment;
-import nz.co.jclib.jcpicklib.utils.JCConstant;
 
 public class JCPickerActivity extends JCPickerBaseActivity {
     protected static final String KEY_MAIN_FRAGMENT = "key_mainFragment";
@@ -31,9 +29,8 @@ public class JCPickerActivity extends JCPickerBaseActivity {
     }
 
     private void setLandingFragment() {
-        JCPickerEnterOption enterOption = getIntent().getParcelableExtra(KEY_ENTER_OPTION);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, JCPickerClient.getInstance().getPickerFragment(enterOption, null), KEY_MAIN_FRAGMENT)
+                .replace(R.id.container, JCPickerClient.getDefaultInstance(this).getPickerFragment(null), KEY_MAIN_FRAGMENT)
                 .commit();
     }
 

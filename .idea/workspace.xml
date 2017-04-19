@@ -44,45 +44,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40b31835-5e8b-4b9a-87a0-33ec3a1bf9c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_confirm_icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCBackableFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCImageListAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/menu/jc_selecting_men.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/menu/jc_standard_menu.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/ToolbarFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCToolbarFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugAndroidTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugUnitTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugUnitTestJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileDebugUnitTestJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_jcpicklib_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_back_icon.png" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_back_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_close_icon.png" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_close_icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_menu_icon.png" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/drawable-xxhdpi/jcpick_menu_icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCPickerEnterOption.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCPickerEnterOption.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/presenter/JCFileListPresenter.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/presenter/JCFileListPresenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerActivity.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCAlbumListAdapter.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCAlbumListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/imagePicker/JCAlbumPickerFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/imagePicker/JCAlbumPickerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/imagePicker/JCImagePickerFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/imagePicker/JCImagePickerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/FileUtils.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/FileUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/layout/item_photo.xml" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/layout/item_photo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" />
     </list>
     <ignored path="JCPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,19 +105,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JCPickerBaseFileListFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JCPickerBaseFileListFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.041533545">
-              <caret line="160" column="18" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
+            <state vertical-scroll-proportion="-7.111111">
+              <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5306#5362#0" expanded="true" />
-                <element signature="e#5485#5540#0" expanded="true" />
-                <element signature="e#6671#6898#0" expanded="true" />
-                <element signature="e#6897#6898#0" expanded="true" />
-                <element signature="e#7191#7264#0" expanded="true" />
-                <element signature="e#7369#7441#0" expanded="true" />
+                <element signature="e#5280#5336#0" expanded="true" />
+                <element signature="e#5459#5514#0" expanded="true" />
+                <element signature="e#6644#6871#0" expanded="true" />
+                <element signature="e#6870#6871#0" expanded="true" />
+                <element signature="e#7164#7237#0" expanded="true" />
+                <element signature="e#7342#7414#0" expanded="true" />
+                <element signature="e#9255#9412#0" expanded="true" />
+                <element signature="e#9411#9412#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,8 +129,20 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="126" selection-start-line="46" selection-start-column="126" selection-end-line="46" selection-end-column="126" />
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JCPickerHostFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,7 +161,7 @@
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="83" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+              <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -168,14 +177,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCPickerClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JCPickerClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.65543646">
+              <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
               <folding>
-                <element signature="e#764#765#0" expanded="true" />
-                <element signature="e#795#796#0" expanded="true" />
+                <element signature="e#1021#1022#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1096#1097#0" expanded="true" />
+                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1840#1841#0" expanded="true" />
+                <element signature="e#1883#1884#0" expanded="true" />
+                <element signature="e#2085#2086#0" expanded="true" />
+                <element signature="e#2131#2132#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2867,11 +2882,11 @@
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/menu/jc_selecting_men.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/menu/jc_standard_menu.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/FileUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerActivity.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
       </list>
     </option>
   </component>
@@ -4368,19 +4383,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java</url>
-          <line>185</line>
+          <line>184</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java</url>
-          <line>318</line>
+          <line>317</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java</url>
-          <line>319</line>
+          <line>318</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -4750,16 +4765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31309903">
-          <caret line="158" column="51" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.185184">
@@ -4807,11 +4812,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="126" selection-start-line="46" selection-start-column="126" selection-end-line="46" selection-end-column="126" />
-          <folding />
+        <state vertical-scroll-proportion="-7.111111">
+          <caret line="110" column="27" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5280#5336#0" expanded="true" />
+            <element signature="e#5459#5514#0" expanded="true" />
+            <element signature="e#6644#6871#0" expanded="true" />
+            <element signature="e#6870#6871#0" expanded="true" />
+            <element signature="e#7164#7237#0" expanded="true" />
+            <element signature="e#7342#7414#0" expanded="true" />
+            <element signature="e#9255#9412#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4826,34 +4841,42 @@
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="83" selection-start-line="35" selection-start-column="83" selection-end-line="35" selection-end-column="83" />
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.65543646">
+          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
           <folding>
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.041533545">
-          <caret line="160" column="18" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5306#5362#0" expanded="true" />
-            <element signature="e#5485#5540#0" expanded="true" />
-            <element signature="e#6671#6898#0" expanded="true" />
-            <element signature="e#6897#6898#0" expanded="true" />
-            <element signature="e#7191#7264#0" expanded="true" />
-            <element signature="e#7369#7441#0" expanded="true" />
+            <element signature="e#1021#1022#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1840#1841#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
+            <element signature="e#2131#2132#0" expanded="true" />
           </folding>
         </state>
       </provider>

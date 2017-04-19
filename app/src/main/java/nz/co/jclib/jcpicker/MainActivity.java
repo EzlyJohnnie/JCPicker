@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
         btnStartActivity = findViewById(R.id.btn_start_activity);
         btnGetFragment = findViewById(R.id.btn_get_fragment);
 
-
-        final JCPickerEnterOption enterOption = new JCPickerEnterOption();
-        enterOption.setPickType(JCConstant.PICK_TYPE_IMAGE);
+        final JCPickerClient client = JCPickerClient.Builder(this)
+                .setPickerType(JCConstant.PICK_TYPE_IMAGE)
+                .build();
 
         btnStartActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                JCPickerClient.getInstance().startPickerActivity(MainActivity.this, enterOption, MainActivity.this);
+                client.startPickerActivity(MainActivity.this, MainActivity.this);
             }
         });
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
             @Override
             public void onClick(View view) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, JCPickerClient.getInstance().getPickerFragment(enterOption, MainActivity.this), KEY_MAIN_FRAGMENT)
+                        .replace(R.id.container, client.getPickerFragment(MainActivity.this), KEY_MAIN_FRAGMENT)
                         .addToBackStack(null)
                         .commit();
             }

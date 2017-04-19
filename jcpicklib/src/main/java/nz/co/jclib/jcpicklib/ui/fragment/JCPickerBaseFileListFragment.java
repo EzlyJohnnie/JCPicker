@@ -33,7 +33,6 @@ import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCAlbumPickerFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCImagePickerFragment;
 import nz.co.jclib.jcpicklib.ui.viewinterface.JCFileListView;
 import nz.co.jclib.jcpicklib.utils.JCConstant;
-import nz.co.jclib.jcpicklib.utils.UIHelper;
 
 /**
  * Created by Johnnie on 28/03/17.
@@ -109,7 +108,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_item_done){
-            JCPickerClient.getInstance().completePicker(adapter.getSelectedFiles());
+            JCPickerClient.getDefaultInstance(getContext()).completePicker(adapter.getSelectedFiles());
         }
 
         if(getActivity() instanceof JCPickerActivity){
@@ -158,7 +157,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
                 }
                 if(adapter.getSelectedFiles().size() > 1){
                     pickItemStr += "s";
-                } 
+                }
 
                 toolbar.setSubtitle(String.format("%d %s selected", adapter.getSelectedFiles().size(), pickItemStr));
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
