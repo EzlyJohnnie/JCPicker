@@ -3,8 +3,11 @@ package nz.co.jclib.jcpicklib.data;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import nz.co.jclib.jcpicklib.data.model.JCFile;
@@ -117,5 +120,43 @@ public class JCFileProvider {
         }
 
         return files;
+    }
+
+    public static ArrayList<JCFile> provideFilesForPath(Context context, String path) {
+        ArrayList<JCFile> files = new ArrayList<>();
+
+        File folder = getFolderFromPath(context, path);
+        File[] childFiles = folder.listFiles();
+        for(File childFile : childFiles){
+            JCFile file = new JCFile();
+            file.setName(childFile.getName());
+            file.setSize(childFile.length());
+            file.setUrl(childFile.getAbsolutePath());
+
+            files.add(file);
+        }
+
+        return files;
+    }
+
+    private static File getFolderFromPath(Context context, String path){
+        File folder = null;
+
+        //get files from provided folder
+        if(!TextUtils.isEmpty(path)){
+            folder = new File(path);
+        }
+
+        //if folder not exist, get from root sd card
+        if(folder == null || !folder.exists()){
+            folder = Environment.getExternalStorageDirectory();
+        }
+
+        //if not sdcard, get from internal storage
+        if(folder == null || !folder.exists()){
+            folder = context.getFilesDir();
+        }
+
+        return folder;
     }
 }

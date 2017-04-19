@@ -27,7 +27,15 @@ public class JCFilePickerFragment extends JCPickerBaseFileListFragment {
         if(getParentFragment() instanceof JCPickerHostFragment){
             JCPickerEnterOption enterOption = this.enterOption.clone();
             enterOption.setParentName(file.getName());
+            enterOption.setPath(file.getUrl());
             ((JCPickerHostFragment)getParentFragment()).pushFragment(getInstance(enterOption));
         }
     }
+
+
+    @Override
+    protected void loadFiles() {
+        presenter.loadFilesForPath(enterOption.getPath());
+    }
+
 }

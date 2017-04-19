@@ -27,6 +27,7 @@ import nz.co.jclib.jcpicklib.ui.JCToolbarFragment;
 import nz.co.jclib.jcpicklib.ui.JCBackableFragment;
 import nz.co.jclib.jcpicklib.ui.adapter.JCAlbumListAdapter;
 import nz.co.jclib.jcpicklib.ui.adapter.JCBaseFileListAdapter;
+import nz.co.jclib.jcpicklib.ui.adapter.JCFileListAdapter;
 import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.filePicker.JCFilePickerFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCAlbumPickerFragment;
@@ -277,7 +278,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     }
 
     protected JCBaseFileListAdapter initListAdapter(){
-        return new JCAlbumListAdapter();
+        return new JCFileListAdapter();
     }
 
     protected RecyclerView.LayoutManager createLayoutManager() {
@@ -359,9 +360,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
             getActivity().invalidateOptionsMenu();
         }
 
-        if(selectedFiles != null && selectedFiles.size() > 0){
-            initToolbar();
-        }
+        initToolbar();
         previousSelectedFilesCount = selectedFiles != null ? selectedFiles.size() : 0;
     }
 

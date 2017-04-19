@@ -21,6 +21,7 @@ public class JCPickerClient {
     private JCPickerListener mListener;
     private JCPickerEnterOption enterOption;
     private int maxSelectedItemCount;
+    private boolean isAllowSelectDir;
 
     public static JCPickerClient getDefaultInstance(Context context){
         if(instance == null){
@@ -42,6 +43,10 @@ public class JCPickerClient {
         return maxSelectedItemCount;
     }
 
+    public boolean isAllowSelectDir() {
+        return isAllowSelectDir;
+    }
+
     public Fragment getPickerFragment(JCPickerListener listener){
         if(listener != null){
             instance.mListener = listener;
@@ -58,8 +63,6 @@ public class JCPickerClient {
         JCPickerActivity.createAndstartActivity(activity, enterOption);
     }
 
-
-
     public void completePicker(ArrayList<JCFile> selectedFiles){
         if(mListener != null){
             mListener.onFilePicked(selectedFiles);
@@ -75,6 +78,7 @@ public class JCPickerClient {
     public static class Builder{
         private JCPickerEnterOption enterOption;
         private int maxSelectedItemCount;
+        private boolean isAllowSelectDir;
         private Context context;
 
         public Builder(Context context) {
@@ -99,12 +103,18 @@ public class JCPickerClient {
             return this;
         }
 
+        public Builder setAllowSelectDir(boolean allowSelectDir) {
+            isAllowSelectDir = allowSelectDir;
+            return this;
+        }
+
         public JCPickerClient build(){
             instance = new JCPickerClient(context);
             if(enterOption != null){
                 instance.enterOption = enterOption;
             }
             instance.maxSelectedItemCount = maxSelectedItemCount;
+            instance.isAllowSelectDir = isAllowSelectDir;
             return instance;
         }
     }

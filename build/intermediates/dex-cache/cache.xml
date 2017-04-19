@@ -2,11 +2,148 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.3.1_f71c8973228c462dea7c1d2dd6d31211abac241c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.3.1_6308367cd298281957e324b5267ab879bf56563f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_6c3f7b5002da7887ffd20ff1b16dae61e82af2ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/JCPicker/jcpicklib/unspecified/jars/classes.jar"
         jumboMode="false"
+        optimize="true"
         revision="25.0.2"
-        sha1="779f475236278402433341fa7ae59458b5b4b574">
+        sha1="8e79cb11b2664c748a732c2795d934fec623521b">
         <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/JCPicker-jcpicklib-unspecified_a9b2eeafdd0f87c7329bf4588496542261c58ff5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.3.1_c29ccd7ba19ebd48201cd06ff5210e1f361c2f09.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.1_76d3b99dfe6d43dc15fe56f64d2ef052124be125.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_27dfc19a24b6a7018acd8f81004ede6da95680c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.3.1_bdc9c89c7ce6cc710e854b6da17ad6f1b8a2b9ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.3.1_414f38289273a777b7817dfaacf1f2cf5fb00479.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.3.1_1c9f9bfd1ff73cd56ee0842577267ee98f75a945.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.3.1_410724303b9dfab4a20bdef1d2e192180b6090e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.3.1_7ac4ba71a84675e420f35f5b88a34d3e2bd6902e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.0/c4ba5371a29ac9b2ad6129b1d39ea38750043eff/gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/gson-2.8.0_c49fabcc610eafc814c9b696094c9ed0870031a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/percent/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1fc708e023161b0dd4d6fa6e7c3dee593c920b55">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-percent-25.3.1_caef2a3d97fb1c31b42e2791dbfa5111a6282007.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d1ad9f635c0e743663c645a57d89ad5873bb00b1">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.makeramen-roundedimageview-2.1.0_a6e8f462fc1dbd7c8becffc2e1b9a9b201f49395.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.3.1_f0903adbbcfef8c7a3cdfe4711a8a6c4adbd8b64.jar" />
     </item>
 
 </items>

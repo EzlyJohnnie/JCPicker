@@ -22,10 +22,12 @@ public class JCImagePickerFragment extends JCAlbumPickerFragment {
         return fragment;
     }
 
+    @Override
     protected int getMaxImageWidth(){
         return 120;
     }
 
+    @Override
     protected int getMinColumnCount(){
         return 3;
     }

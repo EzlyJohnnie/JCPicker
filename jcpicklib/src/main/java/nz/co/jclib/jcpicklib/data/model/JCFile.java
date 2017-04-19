@@ -127,7 +127,7 @@ public class JCFile implements Parcelable {
         if(isFolder()){
             result = R.drawable.jcpick_folder;
         }
-        else if(isFile()){
+        else if(getExtension() != null){
             switch (getExtension()){
                 case ".avi":
                     result = R.drawable.jcpick_file_avi_icon;

@@ -15,6 +15,7 @@ import com.squareup.picasso.Target;
 import java.io.File;
 import java.util.ArrayList;
 
+import nz.co.jclib.jcpicklib.JCPickerClient;
 import nz.co.jclib.jcpicklib.R;
 import nz.co.jclib.jcpicklib.data.model.JCFile;
 import nz.co.jclib.jcpicklib.ui.adapter.viewHolder.JCEmptyFileListItem;
@@ -106,6 +107,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
     protected void setupItemView(RecyclerView.ViewHolder holder, final int position) {
         final JCFileListItem viewHolder = (JCFileListItem) holder;
         final JCFile file = files.get(position);
+        Context context = holder.itemView.getContext();
 
         boolean hasFileBeenSelected = FileUtils.isFileExistInGivenFiles(file, selectedFiles);
         if(hasFileBeenSelected){
@@ -113,7 +115,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         }
 
         if(viewHolder.txt_size != null){
-            viewHolder.txt_size.setVisibility(file.isFile() ? View.VISIBLE : View.GONE);
+            viewHolder.txt_size.setVisibility(file.isFolder() ? View.GONE: View.VISIBLE);
             viewHolder.txt_size.setText(FileUtils.getSizeString(file.getSize(), false));
         }
 
@@ -122,6 +124,13 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         }
 
         if(viewHolder.checkBox != null){
+            if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir()){
+                viewHolder.checkBox.setVisibility(View.GONE);
+            }
+            else{
+                viewHolder.checkBox.setVisibility(View.VISIBLE);
+            }
+
             viewHolder.setSelect(file.isSelected());
 
             viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +161,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
 
         //setup image
         if(file.isImage()){
-            Picasso.with(viewHolder.iv_icon.getContext())
+            Picasso.with(context)
                     .load(new File(file.getUrl()))
                     .fit()
                     .centerCrop()
@@ -163,10 +172,10 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
             //TODO
         }
         else{
-            viewHolder.iv_icon.setImageDrawable(viewHolder.iv_icon.getContext().getResources().getDrawable(file.getFileImageResID()));
+            viewHolder.iv_icon.setImageDrawable(context.getResources().getDrawable(file.getFileImageResID()));
         }
 
-        int padding = getPadding(viewHolder.iv_icon.getContext(), file);
+        int padding = getPadding(context, file);
         viewHolder.iv_icon.setPadding(padding, padding, padding, padding);
 
         //setup listener
@@ -215,6 +224,17 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
                 public boolean onLongClick(View v) {
                     if(mFileListAdapterListener != null){
                         mFileListAdapterListener.onOpenImage(file, position);
+                    }
+                    return false;
+                }
+            });
+        }
+        else if(file.isFolder() && JCPickerClient.getDefaultInstance(context).isAllowSelectDir()){
+            viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    if(mFileListAdapterListener != null){
+                        mFileListAdapterListener.onOpenFolder(file, position);
                     }
                     return false;
                 }

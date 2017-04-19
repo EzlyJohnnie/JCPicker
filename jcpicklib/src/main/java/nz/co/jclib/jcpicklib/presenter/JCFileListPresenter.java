@@ -52,4 +52,19 @@ public class JCFileListPresenter extends JCPickerBasePresenter{
 
         thread.start();
     }
+
+    public void loadFilesForPath(final String path) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(mView != null){
+                    mView.onLoadingFiles();
+                    ArrayList<JCFile> files = JCFileProvider.provideFilesForPath(mView.getContext(), path);
+                    mView.onFilePrepared(files);
+                }
+            }
+        });
+
+        thread.start();
+    }
 }
