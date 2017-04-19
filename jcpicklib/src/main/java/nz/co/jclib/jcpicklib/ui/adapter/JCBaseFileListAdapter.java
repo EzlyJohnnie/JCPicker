@@ -52,6 +52,10 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
 
     public void resetSelectedFiles() {
         this.selectedFiles = new ArrayList<>();
+        for(JCFile file : files){
+            file.setSelected(false);
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -103,6 +107,10 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         final JCFileListItem viewHolder = (JCFileListItem) holder;
         final JCFile file = files.get(position);
 
+        boolean hasFileBeenSelected = FileUtils.isFileExistInGivenFiles(file, selectedFiles);
+        if(hasFileBeenSelected){
+            file.setSelected(true);
+        }
 
         if(viewHolder.txt_size != null){
             viewHolder.txt_size.setVisibility(file.isFile() ? View.VISIBLE : View.GONE);
@@ -111,6 +119,35 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
 
         if(viewHolder.txt_name != null){
             viewHolder.txt_name.setText(file.getName());
+        }
+
+        if(viewHolder.checkBox != null){
+            viewHolder.setSelect(file.isSelected());
+
+            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    file.setSelected(true);
+                    if(file.isSelected()){
+                        selectedFiles.add(file);
+                    }
+                    else{
+                        file.setSelected(false);
+                        selectedFiles.remove(file);
+                    }
+                }
+            });
+
+            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewHolder.itemView.performClick();
+                }
+            });
+        }
+
+        if(viewHolder.overlay != null){
+            viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
         }
 
         //setup image
@@ -162,6 +199,10 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
                         if(viewHolder.overlay != null){
                             viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
                         }
+
+                        if(mFileListAdapterListener != null){
+                            mFileListAdapterListener.onItemSelected(selectedFiles);
+                        }
                     }
                 }
             }
@@ -204,5 +245,6 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
     public interface FileListAdapterListener {
         void onOpenFolder(JCFile file, int position);
         void onOpenImage(JCFile file, int position);
+        void onItemSelected(ArrayList<JCFile> selectedFiles);
     }
 }

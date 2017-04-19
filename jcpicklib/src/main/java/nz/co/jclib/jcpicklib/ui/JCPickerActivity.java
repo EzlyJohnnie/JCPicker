@@ -20,7 +20,7 @@ public class JCPickerActivity extends JCPickerBaseActivity {
     public static void createAndstartActivity(Activity activity, JCPickerEnterOption enterOption) {
         Intent intent = new Intent(activity, JCPickerActivity.class);
         intent.putExtra(KEY_ENTER_OPTION, enterOption);
-        activity.startActivityForResult(intent, JCConstant.REQUEST_CODE);
+        activity.startActivity(intent);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class JCPickerActivity extends JCPickerBaseActivity {
     private void setLandingFragment() {
         JCPickerEnterOption enterOption = getIntent().getParcelableExtra(KEY_ENTER_OPTION);
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, JCPickerClient.getInstance().getPickerFragment(enterOption), KEY_MAIN_FRAGMENT)
+                .replace(R.id.container, JCPickerClient.getInstance().getPickerFragment(enterOption, null), KEY_MAIN_FRAGMENT)
                 .commit();
     }
 
@@ -45,10 +45,9 @@ public class JCPickerActivity extends JCPickerBaseActivity {
         }
         else{
             //TODO: set result and finish
+            JCPickerClient.reset();
             finish();
         }
-
-
     }
 
 }

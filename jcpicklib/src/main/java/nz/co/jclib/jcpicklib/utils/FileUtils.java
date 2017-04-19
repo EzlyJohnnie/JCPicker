@@ -20,6 +20,12 @@ import nz.co.jclib.jcpicklib.data.model.JCFile;
  * Created by Johnnie on 16/03/16.
  */
 public class FileUtils {
+
+    public static String getFileNameFromPath(String path) {
+        return  path.substring(path.lastIndexOf('/') + 1, path.length());
+    }
+
+
     public static String getFileExtension(String fileName) {
         if (fileName.indexOf("?") > -1) {
             fileName = fileName.substring(0, fileName.indexOf("?"));
@@ -76,7 +82,7 @@ public class FileUtils {
     public static boolean isFileExistInGivenFiles(JCFile file, ArrayList<JCFile> existFiles) {
         boolean isExist = false;
         for(JCFile existFile : existFiles){
-            if(existFile.getName().equals(file.getName())){
+            if(existFile.getId().equals(file.getId())){
                 isExist = true;
             }
         }

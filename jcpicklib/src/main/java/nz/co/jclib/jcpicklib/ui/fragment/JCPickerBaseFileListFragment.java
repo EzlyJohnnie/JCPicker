@@ -8,17 +8,23 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import nz.co.jclib.jcpicklib.JCPickerClient;
 import nz.co.jclib.jcpicklib.R;
 import nz.co.jclib.jcpicklib.data.model.JCFile;
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.presenter.JCFileListPresenter;
+import nz.co.jclib.jcpicklib.ui.JCPickerActivity;
 import nz.co.jclib.jcpicklib.ui.JCPickerHostFragment;
-import nz.co.jclib.jcpicklib.ui.ToolbarFragment;
+import nz.co.jclib.jcpicklib.ui.JCToolbarFragment;
+import nz.co.jclib.jcpicklib.ui.JCBackableFragment;
 import nz.co.jclib.jcpicklib.ui.adapter.JCAlbumListAdapter;
 import nz.co.jclib.jcpicklib.ui.adapter.JCBaseFileListAdapter;
 import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseFragment;
@@ -27,13 +33,15 @@ import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCAlbumPickerFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCImagePickerFragment;
 import nz.co.jclib.jcpicklib.ui.viewinterface.JCFileListView;
 import nz.co.jclib.jcpicklib.utils.JCConstant;
+import nz.co.jclib.jcpicklib.utils.UIHelper;
 
 /**
  * Created by Johnnie on 28/03/17.
  */
 public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implements JCBaseFileListAdapter.FileListAdapterListener,
         JCFileListView,
-        ToolbarFragment
+        JCToolbarFragment,
+        JCBackableFragment
 {
 
     protected static final String KEY_ENTER_OPTION = "key_enterOption";
@@ -45,13 +53,13 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     protected RecyclerView fileList;
     protected JCBaseFileListAdapter adapter;
     protected ArrayList<JCFile> files;
-
+    private int previousSelectedFilesCount;
 
     public static Fragment getInstance(JCPickerEnterOption enterOption) {
         Fragment fragment = null;
         switch (enterOption.getPickType()){
             case JCConstant.PICK_TYPE_IMAGE:
-                if(TextUtils.isEmpty(enterOption.getPath())){
+                if(TextUtils.isEmpty(enterOption.getAlbumName())){
                     fragment = JCAlbumPickerFragment.getInstance(enterOption);
                 }
                 else{
@@ -73,6 +81,12 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = initView(inflater, container);
         init(root, savedInstanceState);
@@ -85,6 +99,39 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
         initToolbar();
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.clear();
+        initMenu(menu, inflater);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.menu_item_done){
+            JCPickerClient.getInstance().completePicker(adapter.getSelectedFiles());
+        }
+
+        if(getActivity() instanceof JCPickerActivity){
+            getActivity().finish();
+        }
+        else{
+            //TODO: dismiss host fragment
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void initMenu(Menu menu, MenuInflater inflater) {
+        if(adapter.getSelectedFiles() != null && adapter.getSelectedFiles().size() > 0){
+            inflater.inflate(R.menu.jc_selecting_men, menu);
+        }
+        else{
+            inflater.inflate(R.menu.jc_standard_menu, menu);
+        }
+    }
+
     private void initToolbar() {
         Toolbar toolbar = null;
         if(getParentFragment() instanceof JCPickerHostFragment){
@@ -92,25 +139,26 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
         }
 
         if(toolbar != null){
+            getActivity().invalidateOptionsMenu();
             toolbar.setTitle(getTitle());
             toolbar.setSubtitle(null);
 
-            int naviIconRes = R.drawable.jcpick_menu_icon;
+            int naviIconRes = 0;
             if(adapter.getSelectedFiles() != null && adapter.getSelectedFiles().size() > 0){
                 naviIconRes = R.drawable.jcpick_close_icon;
 
                 String pickItemStr = "";
                 switch (enterOption.getPickType()){
                     case JCConstant.PICK_TYPE_IMAGE:
-                        pickItemStr = getContext().getResources().getString(R.string.jc_slide_menu_image_title).toLowerCase();
+                        pickItemStr = getContext().getResources().getString(R.string.jc_image);
                         break;
                     case JCConstant.PICK_TYPE_FILE:
-                        pickItemStr = getContext().getResources().getString(R.string.jc_slide_menu_file_title).toLowerCase();
+                        pickItemStr = getContext().getResources().getString(R.string.jc_file);
                         break;
                 }
                 if(adapter.getSelectedFiles().size() > 1){
                     pickItemStr += "s";
-                }
+                } 
 
                 toolbar.setSubtitle(String.format("%d %s selected", adapter.getSelectedFiles().size(), pickItemStr));
                 toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -163,7 +211,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     }
 
     private boolean isRoot(){
-        return TextUtils.isEmpty(enterOption.getPath());
+        return TextUtils.isEmpty(enterOption.getPath()) && TextUtils.isEmpty(enterOption.getAlbumName());
     }
 
 
@@ -266,6 +314,17 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
         initToolbar();
     }
 
+    @Override
+    public boolean onBackClicked() {
+        boolean hasProcess = false;
+        if(adapter.getSelectedFiles() != null && adapter.getSelectedFiles().size() > 0){
+            hasProcess = true;
+            adapter.resetSelectedFiles();
+            initToolbar();
+        }
+        return hasProcess;
+    }
+
     ///////////////////////////////////// Presenter callback ////////////////////////////////////
     @Override
     public void onLoadingFiles() {
@@ -292,5 +351,20 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
     ///////////////////////////////////// Adapter ////////////////////////////////////
     @Override public void onOpenFolder(JCFile file, int position) {/*should override by child*/}
     @Override public void onOpenImage(JCFile file, int position) {/*should override by child*/}
+
+    @Override
+    public void onItemSelected(ArrayList<JCFile> selectedFiles) {
+        if(previousSelectedFilesCount == 0 && selectedFiles != null && selectedFiles.size() > 0
+                || (previousSelectedFilesCount > 0 && (selectedFiles == null || selectedFiles.size() == 0)))
+        {
+            getActivity().invalidateOptionsMenu();
+        }
+
+        if(selectedFiles != null && selectedFiles.size() > 0){
+            initToolbar();
+        }
+        previousSelectedFilesCount = selectedFiles != null ? selectedFiles.size() : 0;
+    }
+
 
 }

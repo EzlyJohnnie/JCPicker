@@ -19,7 +19,7 @@
             app:layout_widthPercent="100%"
             app:layout_aspectRatio="100%"
             android:background="@color/jc_transparent_black_50"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
     </android.support.percent.PercentRelativeLayout>
 
@@ -31,5 +31,5 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:layout_alignParentRight="true"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 </RelativeLayout>

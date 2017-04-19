@@ -18,7 +18,6 @@ import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.ui.adapter.JCSlideMenuAdapter;
 import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.JCPickerBaseFileListFragment;
-import nz.co.jclib.jcpicklib.utils.JCConstant;
 import nz.co.jclib.jcpicklib.utils.UIHelper;
 
 /**
@@ -76,6 +75,11 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
         outState.putParcelable(KEY_ENTER_OPTION, enterOption);
         outState.putInt(KEY_SELECTED_MENU_INDEX, selectedMenuIndex);
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
     }
 
     private void init(Bundle savedInstanceState, View root) {
@@ -175,12 +179,17 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
 
     public boolean pop(){
         boolean hasPop = false;
-        if (getChildFragmentManager().getBackStackEntryCount() > 0) {
+        Fragment fragment = getChildFragmentManager().findFragmentByTag(KEY_MAIN_FRAGMENT);
+        if(fragment != null && fragment instanceof JCBackableFragment){
+            hasPop = ((JCBackableFragment)fragment).onBackClicked();
+        }
+
+        if (!hasPop && getChildFragmentManager().getBackStackEntryCount() > 0) {
             hasPop = true;
             UIHelper.hideKeyBoard(getView());
             getChildFragmentManager().popBackStackImmediate();
-            if(getChildFragmentManager().findFragmentByTag(KEY_MAIN_FRAGMENT) instanceof ToolbarFragment){
-                ((ToolbarFragment)getChildFragmentManager().findFragmentByTag(KEY_MAIN_FRAGMENT)).updateToolbar();
+            if(fragment instanceof JCToolbarFragment){
+                ((JCToolbarFragment)getChildFragmentManager().findFragmentByTag(KEY_MAIN_FRAGMENT)).updateToolbar();
             }
         }
         return hasPop;

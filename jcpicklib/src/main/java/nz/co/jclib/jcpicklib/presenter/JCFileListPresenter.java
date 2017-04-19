@@ -38,7 +38,18 @@ public class JCFileListPresenter extends JCPickerBasePresenter{
         thread.start();
     }
 
-    public void loadImageForAlbumName(String albumName){
+    public void loadImageForAlbumName(final String albumID){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(mView != null){
+                    mView.onLoadingFiles();
+                    ArrayList<JCFile> files = JCFileProvider.provideImageForAlbum(mView.getContext(), albumID);
+                    mView.onFilePrepared(files);
+                }
+            }
+        });
 
+        thread.start();
     }
 }

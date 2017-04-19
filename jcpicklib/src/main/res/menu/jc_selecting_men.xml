@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.puttiforms.android.activity.HomeActivity" >
+
+    <item android:id="@+id/menu_item_done"
+        android:title="@string/done"
+        android:icon="@drawable/jcpick_confirm_icon"
+        app:showAsAction="always" />
+
+</menu>

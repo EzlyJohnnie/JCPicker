@@ -20,7 +20,6 @@ import nz.co.jclib.jcpicklib.utils.UIHelper;
  * Created by Johnnie on 28/03/17.
  */
 public class JCAlbumPickerFragment extends JCPickerBaseFileListFragment{
-    private static final int MAX_IMAGE_WIDTH = 180;
 
     private int column = -1;
     private JCGridSpacingItemDecoration itemDecoration;
@@ -43,10 +42,10 @@ public class JCAlbumPickerFragment extends JCPickerBaseFileListFragment{
             DisplayMetrics displaymetrics = new DisplayMetrics();
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
             int screenWidth = (int)(displaymetrics.widthPixels / getContext().getResources().getDisplayMetrics().density);
-            column = screenWidth / MAX_IMAGE_WIDTH;
+            column = screenWidth / getMaxImageWidth();
 
-            if(column < 2){
-                column = 2;
+            if(column < getMinColumnCount()){
+                column = getMinColumnCount();
             }
         }
         else{
@@ -54,6 +53,14 @@ public class JCAlbumPickerFragment extends JCPickerBaseFileListFragment{
         }
 
         return column;
+    }
+
+    protected int getMaxImageWidth(){
+        return 180;
+    }
+
+    protected int getMinColumnCount(){
+        return 2;
     }
 
     @Override
@@ -100,9 +107,10 @@ public class JCAlbumPickerFragment extends JCPickerBaseFileListFragment{
     public void onOpenFolder(JCFile file, int position) {
         if(getParentFragment() instanceof JCPickerHostFragment){
             JCPickerEnterOption enterOption = this.enterOption.clone();
+            enterOption.setAlbumID(file.getId());
             enterOption.setAlbumName(file.getName());
             enterOption.setParentName(file.getName());
-            ((JCPickerHostFragment)getParentFragment()).pushFragment(getInstance(enterOption));
+            ((JCPickerHostFragment)getParentFragment()).pushFragment(JCPickerBaseFileListFragment.getInstance(enterOption));
         }
     }
 }

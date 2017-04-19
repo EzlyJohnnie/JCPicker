@@ -17,8 +17,10 @@ public class JCPickerEnterOption implements Parcelable {
 
     @Expose private int pickType;
     @Expose private String path;
+    @Expose private String parentName;
+
+    @Expose private String albumID;
     @Expose private String albumName;
-    private String parentName;
 
     public static JCPickerEnterOption createDefaultOption(Context context){
         return JCPreferenceHelper.fromSharedPreference(context, SHARED_PREF_KEY, SHARED_PREF_KEY, JCPickerEnterOption.class);
@@ -58,6 +60,14 @@ public class JCPickerEnterOption implements Parcelable {
         return albumName;
     }
 
+    public String getAlbumID() {
+        return albumID;
+    }
+
+    public void setAlbumID(String albumID) {
+        this.albumID = albumID;
+    }
+
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
     }
@@ -75,8 +85,9 @@ public class JCPickerEnterOption implements Parcelable {
         JCPickerEnterOption result = new JCPickerEnterOption();
         result.setPickType(pickType);
         result.setPath(path);
-        result.setAlbumName(albumName);
         result.setParentName(parentName);
+        result.setAlbumID(albumID);
+        result.setAlbumName(albumName);
 
         return result;
     }
@@ -88,8 +99,9 @@ public class JCPickerEnterOption implements Parcelable {
     protected JCPickerEnterOption(Parcel in) {
         pickType = in.readInt();
         path = in.readString();
-        albumName = in.readString();
         parentName = in.readString();
+        albumID = in.readString();
+        albumName = in.readString();
     }
 
     @Override
@@ -101,8 +113,9 @@ public class JCPickerEnterOption implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(pickType);
         dest.writeString(path);
-        dest.writeString(albumName);
         dest.writeString(parentName);
+        dest.writeString(albumID);
+        dest.writeString(albumName);
     }
 
     @SuppressWarnings("unused")

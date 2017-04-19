@@ -6,5 +6,11 @@
     <string name="jc_slide_menu_image_title">Images</string>
     <string name="jc_slide_menu_file_title">Files</string>
 
+    <string name="jc_file">files</string>
+    <string name="jc_image">image</string>
+
     <string name="jc_album_title">@string/jc_slide_menu_image_title</string>
+
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
 </resources>

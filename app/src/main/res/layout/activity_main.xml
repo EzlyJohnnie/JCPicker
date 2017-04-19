@@ -5,8 +5,25 @@
     android:layout_height="match_parent"
     tools:context="nz.co.jclib.jcpicker.MainActivity">
 
+    <Button
+        android:id="@+id/btn_start_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Start Activity"/>
+
+
+    <Button
+        android:id="@+id/btn_get_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_start_activity"
+        android:layout_centerHorizontal="true"
+        android:text="Get Fragment"/>
+
     <FrameLayout
         android:id="@+id/container"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

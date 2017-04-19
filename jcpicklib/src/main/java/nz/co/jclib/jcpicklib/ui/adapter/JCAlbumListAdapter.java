@@ -32,16 +32,4 @@ public class JCAlbumListAdapter extends JCBaseFileListAdapter {
         holder.txtDesc.setText(context.getResources().getText(R.string.jc_empty_album_desc));
         holder.ivImage.setImageDrawable(context.getResources().getDrawable(R.drawable.jcpick_no_image_icon));
     }
-
-    @Override
-    protected void setupItemView(RecyclerView.ViewHolder holder, final int position) {
-        final JCFileListItem viewHolder = (JCFileListItem) holder;
-        final JCFile file = files.get(position);
-
-        if(viewHolder.txt_name != null){
-            viewHolder.txt_name.setText(file.getName());
-        }
-
-        super.setupItemView(holder, position);
-    }
 }

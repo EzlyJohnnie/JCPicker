@@ -8,6 +8,7 @@ import android.provider.MediaStore;
 import java.util.ArrayList;
 
 import nz.co.jclib.jcpicklib.data.model.JCFile;
+import nz.co.jclib.jcpicklib.utils.FileUtils;
 
 /**
  * Created by Johnnie on 18/04/17.
@@ -66,6 +67,48 @@ public class JCFileProvider {
                 file.setUrl(path);
                 file.setChildCount(count);
                 file.setAlbum(true);
+
+                files.add(file);
+
+
+            } while (cursor.moveToNext());
+        }
+
+        return files;
+    }
+
+    public static ArrayList<JCFile> provideImageForAlbum(Context context, String albumID) {
+        ArrayList<JCFile> files = new ArrayList<>();
+
+        // which image properties are we querying
+        String[] projection = new String[] {
+                MediaStore.Images.Media._ID,
+                MediaStore.Images.Media.DATA
+        };
+
+        String where = String.format("%s=\'%s\'", MediaStore.Images.Media.BUCKET_ID, albumID);
+
+        Uri images = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+        // Make the query.
+        Cursor cursor = context.getContentResolver().query(images, projection, where, null, null);
+
+        if (cursor.moveToFirst()) {
+            String id;
+            String path;
+
+            int idColumn = cursor.getColumnIndex(MediaStore.Images.Media._ID);
+            int pathColumn = cursor.getColumnIndex(MediaStore.Images.Media.DATA);
+
+            do {
+                // Get the field values
+                id = cursor.getString(idColumn);
+                path = cursor.getString(pathColumn);
+
+                JCFile file = new JCFile();
+                file.setId(id);
+                file.setUrl(path);
+                file.setName(FileUtils.getFileNameFromPath(path));
 
                 files.add(file);
 
