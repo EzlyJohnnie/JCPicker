@@ -34,6 +34,7 @@ import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.filePicker.JCFilePickerFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCAlbumPickerFragment;
 import nz.co.jclib.jcpicklib.ui.fragment.imagePicker.JCImagePickerFragment;
+import nz.co.jclib.jcpicklib.ui.fragment.preview.JCImagePreviewFragment;
 import nz.co.jclib.jcpicklib.ui.viewinterface.JCFileListView;
 import nz.co.jclib.jcpicklib.utils.JCConstant;
 
@@ -148,7 +149,7 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
             toolbar.setTitle(getTitle());
             toolbar.setSubtitle(null);
 
-            int naviIconRes = 0;
+            int naviIconRes;
             if(adapter.getSelectedFiles() != null && adapter.getSelectedFiles().size() > 0){
                 naviIconRes = R.drawable.jcpick_close_icon;
 
@@ -355,7 +356,12 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
 
     ///////////////////////////////////// Adapter ////////////////////////////////////
     @Override public void onOpenFolder(JCFile file, int position) {/*should override by child*/}
-    @Override public void onOpenImage(JCFile file, int position) {/*should override by child*/}
+
+    @Override public void onOpenImage(JCFile file, int position) {
+        if(getParentFragment() instanceof JCPickerHostFragment){
+            ((JCPickerHostFragment)getParentFragment()).pushFragment(JCImagePreviewFragment.getInstance(file.getUrl()));
+        }
+    }
 
     @Override
     public void onItemSelected(ArrayList<JCFile> selectedFiles) {

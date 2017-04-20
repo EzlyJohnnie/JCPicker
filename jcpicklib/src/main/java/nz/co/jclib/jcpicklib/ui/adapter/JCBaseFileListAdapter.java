@@ -228,7 +228,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         });
 
 
-        if(file.isImage()){
+        if(file.isImage() && !file.isAlbum()){
             viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
