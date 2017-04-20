@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
 
         final JCPickerClient client = JCPickerClient.Builder(this)
                 .setPickerType(JCConstant.PICK_TYPE_IMAGE)
+                .setAllowSelectDir(false)
                 .build();
 
         btnStartActivity.setOnClickListener(new View.OnClickListener() {

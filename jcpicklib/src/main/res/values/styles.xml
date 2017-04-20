@@ -35,4 +35,12 @@
         <item name="android:windowEnterAnimation">@anim/slide_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/slide_bottom_out</item>
     </style>
+
+
+    <!--toolbar-->
+    <style name="JCToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        ...
+        <item name="actionMenuTextColor">@color/jc_toolbar_menu_title_color</item>
+        ...
+    </style>`
 </resources>

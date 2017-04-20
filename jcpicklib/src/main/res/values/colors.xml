@@ -10,14 +10,22 @@
     <color name="jc_white">#FFFFFF</color>
     <color name="jc_light_grey">#8a8a8a</color>
 
-
     <color name="jc_transparent_black_50">#80000000</color>
     <color name="jc_transparent_black_60">#96000000</color>
     <color name="jc_transparent_black_80">#CC000000</color>
 
+
     <color name="jc_toolbar_bg_color">@color/jc_white</color>
-    <color name="jc_toolbar_title_color">@color/jc_file_name_color</color>
+    <color name="jc_toolbar_title_color">@color/jc_black</color>
     <color name="jc_toolbar_subtitle_color">@color/jc_sub_title_color</color>
+    <color name="jc_toolbar_menu_title_color">@color/jc_black</color>
+
+    <color name="jc_slide_menu_bg">@color/jc_white</color>
+    <color name="jc_slide_menu_header_bg">@color/jc_light_grey</color>
+    <color name="jc_slide_menu_header_text_color">@color/jc_black</color>
+    <color name="jc_slide_menu_item_text_color">@color/jc_black</color>
+    <color name="jc_ver_lb_txt_color">@color/jc_black</color>
+
 
     <color name="jc_file_name_color">#000000</color>
     <color name="jc_sub_title_color">#909090</color>
@@ -26,16 +34,12 @@
     <color name="jc_pressed_item_bg">#E2E2E2</color>
 
 
-    <color name="jc_ver_lb_txt_color">@color/jc_file_name_color</color>
-
-
     <color name="jc_empty_file_item_bg">@color/jc_white</color>
 
     <color name="jc_album_item_bg">#00000000</color>
     <color name="jc_album_item_name_bg">#00000000</color>
 
     <color name="jc_file_item_bg">@color/jc_white</color>
-    <color name="jc_slide_meun_bg">@color/jc_white</color>
 
 
 </resources>

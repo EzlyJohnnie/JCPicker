@@ -19,7 +19,8 @@
         android:layout_toRightOf="@id/iv_icon"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:textColor="@color/jc_slide_menu_item_text_color"/>
 
     <View
         android:id="@+id/bottom_divider"

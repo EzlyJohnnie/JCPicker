@@ -12,7 +12,9 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import nz.co.jclib.jcpicklib.BuildConfig;
 import nz.co.jclib.jcpicklib.R;
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.ui.adapter.JCSlideMenuAdapter;
@@ -36,6 +38,7 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
     private RecyclerView slideMenuList;
     private JCSlideMenuAdapter slideMenuAdapter;
     private int selectedMenuIndex;
+    private TextView txtVersion;
 
     public static Fragment getInstance(JCPickerEnterOption enterOption) {
         JCPickerHostFragment fragment = new JCPickerHostFragment();
@@ -50,12 +53,6 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
     public Toolbar getToolbar() {
         return toolbar;
     }
-
-    //    @Override
-//    public void onCreate(Bundle savedInstanceState){
-//        super.onCreate(savedInstanceState);
-//        setHasOptionsMenu(true);
-//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -104,6 +101,7 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
 
     private void initView(View root) {
         initViewComponents(root);
+        initView();
         initLandingFragment();
         initSlideMenu();
     }
@@ -122,6 +120,12 @@ public class JCPickerHostFragment extends JCPickerBaseFragment implements JCSlid
         mDrawerLayout = (DrawerLayout) root.findViewById(R.id.drawerLayout);
         toolbar = (Toolbar) root.findViewById(R.id.toolbar);
         slideMenuList = (RecyclerView) root.findViewById(R.id.slide_menu_list);
+        txtVersion = (TextView) root.findViewById(R.id.txt_version);
+    }
+
+    private void initView() {
+        String version = String.format("%s %s", BuildConfig.DEBUG ? "dev" : "ver", BuildConfig.VERSION_NAME);
+        txtVersion.setText(version);
     }
 
     private void initLandingFragment() {

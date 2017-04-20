@@ -107,7 +107,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
     protected void setupItemView(RecyclerView.ViewHolder holder, final int position) {
         final JCFileListItem viewHolder = (JCFileListItem) holder;
         final JCFile file = files.get(position);
-        Context context = holder.itemView.getContext();
+        final Context context = holder.itemView.getContext();
 
         boolean hasFileBeenSelected = FileUtils.isFileExistInGivenFiles(file, selectedFiles);
         if(hasFileBeenSelected){
@@ -194,7 +194,8 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
                 if(mFileListAdapterListener != null){
-                    if(file.isFolder() || file.isAlbum()){
+                    if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir()
+                            || file.isAlbum()){
                         mFileListAdapterListener.onOpenFolder(file, position);
                     }else{
                         file.setSelected(!file.isSelected());

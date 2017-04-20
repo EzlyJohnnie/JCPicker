@@ -59,6 +59,8 @@ public final class JCSlideMenuAdapter extends RecyclerView.Adapter {
         viewHolder.txtTitle.setText(itemTitles[position]);
         viewHolder.bottomDivider.setVisibility(position == itemTitles.length - 1 ? View.GONE : View.VISIBLE);
 
+        viewHolder.itemView.setBackgroundDrawable(context.getResources().getDrawable(selectedMenuIndex == position ?  R.drawable.selected_clickable_item_bg_color : R.drawable.clickable_item_bg_color));
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,6 +76,7 @@ public final class JCSlideMenuAdapter extends RecyclerView.Adapter {
                             break;
                     }
                 }
+                notifyDataSetChanged();
             }
         });
     }
