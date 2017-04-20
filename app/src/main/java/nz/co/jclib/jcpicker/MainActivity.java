@@ -29,14 +29,15 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
         btnStartActivity = findViewById(R.id.btn_start_activity);
         btnGetFragment = findViewById(R.id.btn_get_fragment);
 
-        final JCPickerClient client = JCPickerClient.Builder(this)
-                .setPickerType(JCConstant.PICK_TYPE_IMAGE)
-                .setAllowSelectDir(false)
-                .build();
-
         btnStartActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
+                        .setPickerType(JCConstant.PICK_TYPE_IMAGE)
+                        .setMaxSelectedItemCount(1)
+                        .setAllowSelectDir(true)
+                        .build();
+
                 client.startPickerActivity(MainActivity.this, MainActivity.this);
             }
         });
@@ -44,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
         btnGetFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
+                        .setPickerType(JCConstant.PICK_TYPE_IMAGE)
+                        .setMaxSelectedItemCount(1)
+                        .setAllowSelectDir(true)
+                        .build();
+
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, client.getPickerFragment(MainActivity.this), KEY_MAIN_FRAGMENT)
                         .addToBackStack(null)

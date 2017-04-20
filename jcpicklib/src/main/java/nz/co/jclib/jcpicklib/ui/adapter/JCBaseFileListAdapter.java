@@ -124,7 +124,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         }
 
         if(viewHolder.checkBox != null){
-            if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir()){
+            if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir() || JCPickerClient.getDefaultInstance(context).isSinglePicking()){
                 viewHolder.checkBox.setVisibility(View.GONE);
             }
             else{
@@ -156,7 +156,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         }
 
         if(viewHolder.overlay != null){
-            viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
+            viewHolder.overlay.setVisibility(file.isSelected() || JCPickerClient.getDefaultInstance(context).isSinglePicking() ? View.GONE : View.VISIBLE);
         }
 
         //setup image
@@ -198,6 +198,15 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
                             || file.isAlbum()){
                         mFileListAdapterListener.onOpenFolder(file, position);
                     }else{
+                        if(JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount() > 0
+                                && selectedFiles.size() >= JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount())
+                        {
+                            if(mFileListAdapterListener != null){
+                                mFileListAdapterListener.onSelectedItemReachLimitation();
+                            }
+                            return;
+                        }
+
                         file.setSelected(!file.isSelected());
                         if(file.isSelected()){
                             selectedFiles.add(file);
@@ -267,5 +276,6 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         void onOpenFolder(JCFile file, int position);
         void onOpenImage(JCFile file, int position);
         void onItemSelected(ArrayList<JCFile> selectedFiles);
+        void onSelectedItemReachLimitation();
     }
 }

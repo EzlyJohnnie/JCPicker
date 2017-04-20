@@ -6,7 +6,7 @@
     <string name="jc_slide_menu_image_title">Images</string>
     <string name="jc_slide_menu_file_title">Files</string>
 
-    <string name="jc_file">files</string>
+    <string name="jc_file">file</string>
     <string name="jc_image">image</string>
 
     <string name="jc_album_title">@string/jc_slide_menu_image_title</string>
@@ -14,4 +14,6 @@
     <string name="done">Done</string>
     <string name="cancel">Cancel</string>
     <string name="pick_type">Type</string>
+
+    <string name="jc_reach_limitation" formatted="false">Cannot pick more than %d %s%s.</string>
 </resources>

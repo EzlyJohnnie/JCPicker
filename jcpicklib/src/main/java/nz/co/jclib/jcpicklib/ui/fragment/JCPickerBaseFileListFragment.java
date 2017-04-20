@@ -1,5 +1,6 @@
 package nz.co.jclib.jcpicklib.ui.fragment;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -13,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,7 +27,7 @@ import nz.co.jclib.jcpicklib.ui.JCPickerActivity;
 import nz.co.jclib.jcpicklib.ui.JCPickerHostFragment;
 import nz.co.jclib.jcpicklib.ui.JCToolbarFragment;
 import nz.co.jclib.jcpicklib.ui.JCBackableFragment;
-import nz.co.jclib.jcpicklib.ui.adapter.JCAlbumListAdapter;
+import nz.co.jclib.jcpicklib.ui.Widget.JCSingleToast;
 import nz.co.jclib.jcpicklib.ui.adapter.JCBaseFileListAdapter;
 import nz.co.jclib.jcpicklib.ui.adapter.JCFileListAdapter;
 import nz.co.jclib.jcpicklib.ui.base.JCPickerBaseFragment;
@@ -112,15 +114,18 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
             JCPickerClient.getDefaultInstance(getContext()).completePicker(adapter.getSelectedFiles());
         }
 
+        dismissPicker();
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void dismissPicker(){
         if(getActivity() instanceof JCPickerActivity){
             getActivity().finish();
         }
         else{
             //TODO: dismiss host fragment
         }
-
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void initMenu(Menu menu, MenuInflater inflater) {
@@ -354,14 +359,33 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
 
     @Override
     public void onItemSelected(ArrayList<JCFile> selectedFiles) {
-        if(previousSelectedFilesCount == 0 && selectedFiles != null && selectedFiles.size() > 0
-                || (previousSelectedFilesCount > 0 && (selectedFiles == null || selectedFiles.size() == 0)))
-        {
-            getActivity().invalidateOptionsMenu();
+        if(JCPickerClient.getDefaultInstance(getContext()).isSinglePicking()){
+            JCPickerClient.getDefaultInstance(getContext()).completePicker(adapter.getSelectedFiles());
+            dismissPicker();
         }
+        else{
+            if(previousSelectedFilesCount == 0 && selectedFiles != null && selectedFiles.size() > 0
+                    || (previousSelectedFilesCount > 0 && (selectedFiles == null || selectedFiles.size() == 0)))
+            {
+                getActivity().invalidateOptionsMenu();
+            }
 
-        initToolbar();
-        previousSelectedFilesCount = selectedFiles != null ? selectedFiles.size() : 0;
+            initToolbar();
+            previousSelectedFilesCount = selectedFiles != null ? selectedFiles.size() : 0;
+        }
+    }
+
+    @Override
+    public void onSelectedItemReachLimitation() {
+        Resources resources = getContext().getResources();
+        int maxPickCount = JCPickerClient.getDefaultInstance(getContext()).getMaxSelectedItemCount();
+
+        String errorMsg = String.format(resources.getString(R.string.jc_reach_limitation),//Cannot pick more than %d %s%s
+                maxPickCount,
+                resources.getString(enterOption.getPickType() == JCConstant.PICK_TYPE_FILE ? R.string.jc_file : R.string.jc_image),
+                maxPickCount > 1 ? "s" : "");
+
+        JCSingleToast.makeText(getContext(), errorMsg, Toast.LENGTH_SHORT).show();
     }
 
 

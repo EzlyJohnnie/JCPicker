@@ -43,6 +43,14 @@ public class JCPickerClient {
         return maxSelectedItemCount;
     }
 
+    /**
+     *
+     * @return is can only pick one itme
+     */
+    public boolean isSinglePicking(){
+        return maxSelectedItemCount == 1;
+    }
+
     public boolean isAllowSelectDir() {
         return isAllowSelectDir;
     }
@@ -77,7 +85,7 @@ public class JCPickerClient {
 
     public static class Builder{
         private JCPickerEnterOption enterOption;
-        private int maxSelectedItemCount;
+        private int maxSelectedItemCount = -1;
         private boolean isAllowSelectDir;
         private Context context;
 
@@ -90,6 +98,12 @@ public class JCPickerClient {
             return this;
         }
 
+        /**
+         * set maximum count for items
+         * default (OR set a negative value) for unlimited
+         * @param maxSelectedItemCount
+         * @return
+         */
         public Builder setMaxSelectedItemCount(int maxSelectedItemCount) {
             this.maxSelectedItemCount = maxSelectedItemCount;
             return this;
