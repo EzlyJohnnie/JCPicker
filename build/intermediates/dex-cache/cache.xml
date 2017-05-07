@@ -34,17 +34,8 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="801475b4d5d23efc35388885b39ede1ed084b112">
+        sha1="202b74adbac4c9df1e6f34500ebfb2141b1d1823">
         <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/JCPicker-jcpicklib-unspecified_a9b2eeafdd0f87c7329bf4588496542261c58ff5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.1_76d3b99dfe6d43dc15fe56f64d2ef052124be125.jar" />
     </item>
     <item
         is-multidex="false"
@@ -54,6 +45,15 @@
         revision="25.0.2"
         sha1="150252b33b00274cc868578ade018fda0d43a3eb">
         <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.3.1_c29ccd7ba19ebd48201cd06ff5210e1f361c2f09.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/Johnnie/Documents/Project/JCPicker/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.1_76d3b99dfe6d43dc15fe56f64d2ef052124be125.jar" />
     </item>
     <item
         is-multidex="false"

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
-import java.util.concurrent.ConcurrentNavigableMap;
 
 import nz.co.jclib.jcpicklib.data.model.JCFile;
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
@@ -18,7 +17,7 @@ import nz.co.jclib.jcpicklib.utils.JCConstant;
  */
 public class JCPickerClient {
     private static final int MAX_SELECTED_ITEM_COUNT_UNLIMITED = -1;
-    private static final int MAX_SELECTED_ITEM_COUNT_UNDEFINED = -999;
+    private static final int INT_UNDEFINED = -999;
 
     private static JCPickerClient instance;
     private JCPickerListener mListener;
@@ -97,20 +96,16 @@ public class JCPickerClient {
 
 
     public static class Builder{
-        private JCPickerEnterOption enterOption;
-        private int maxSelectedItemCount = MAX_SELECTED_ITEM_COUNT_UNDEFINED;
+        private int maxSelectedItemCount = INT_UNDEFINED;
         private ArrayList<Integer> pickSources;
         private Context context;
+        private int pickerType = INT_UNDEFINED;
 
         public Builder(Context context) {
             this.context = context;
             pickSources = new ArrayList<>();
         }
 
-        public Builder setEnterOption(JCPickerEnterOption enterOption) {
-            this.enterOption = enterOption;
-            return this;
-        }
 
         /**
          * set maximum count for items
@@ -123,37 +118,75 @@ public class JCPickerClient {
             return this;
         }
 
-        public Builder setPickerType(int pickerType) {
-            if(enterOption == null){
-                enterOption = new JCPickerEnterOption();
-            }
-            enterOption.setPickType(pickerType);
+        /**
+         * set landing picker type image or file
+         * landing picker type will be ignored if only has one type
+         * @param pickerType
+         * @return
+         */
+        public Builder setLandingPickerType(@JCConstant.PickType int pickerType) {
+            this.pickerType = pickerType;
             return this;
         }
 
         public Builder addPickSource(@JCConstant.PickSource int pickSource) {
-            if(!pickSources.contains(pickSource)) {
+            if(pickSource == JCConstant.PICK_SOURCE_ALL){
+                addPickSource(JCConstant.PICK_SOURCE_DIRECTORY);
+                addPickSource(JCConstant.PICK_SOURCE_FILE);
+                addPickSource(JCConstant.PICK_SOURCE_IMAGE);
+            }
+            else if(!pickSources.contains(pickSource)) {
                 pickSources.add(pickSource);
             }
             return this;
         }
 
         public Builder removePickSource(@JCConstant.PickSource int pickSource) {
-            pickSources.remove(pickSource);
+            if(pickSource == JCConstant.PICK_SOURCE_ALL){
+                pickSources.clear();
+            }
+            else{
+                pickSources.remove(pickSource);
+            }
+
             return this;
         }
 
+        /**
+         * default: select image and file
+         *          max selected item: unlimited
+         *          landing on: image picker
+         * @return JCPickerClient
+         */
         public JCPickerClient build(){
             instance = new JCPickerClient(context);
-            if(enterOption != null){
-                instance.enterOption = enterOption;
+
+            if(pickSources.isEmpty()){//set default
+                pickSources.add(JCConstant.PICK_SOURCE_IMAGE);
+                pickSources.add(JCConstant.PICK_SOURCE_FILE);
             }
 
-            if(maxSelectedItemCount != MAX_SELECTED_ITEM_COUNT_UNDEFINED){
+            JCPickerEnterOption enterOption = new JCPickerEnterOption();
+            if(pickSources.size() == 1 && pickSources.contains(JCConstant.PICK_SOURCE_IMAGE)){
+                //pick image only
+                pickerType = JCConstant.PICK_TYPE_IMAGE;
+            }
+            else if(!pickSources.contains(JCConstant.PICK_SOURCE_IMAGE)){
+                //file and directory only
+                pickerType = JCConstant.PICK_TYPE_FILE;
+            }
+            else if(pickerType == INT_UNDEFINED){
+                pickerType = JCConstant.PICK_TYPE_IMAGE;
+            }
+            enterOption.setPickType(pickerType);
+            instance.enterOption = enterOption;
+
+
+            if(maxSelectedItemCount != INT_UNDEFINED){
                 instance.maxSelectedItemCount = maxSelectedItemCount;
             }
 
-            if(pickSources != null && pickSources.size() > 0){
+            if(pickSources.size() > 0){
                 instance.pickSources = pickSources;
             }
 

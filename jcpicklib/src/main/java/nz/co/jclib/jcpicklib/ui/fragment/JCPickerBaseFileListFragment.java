@@ -160,10 +160,23 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
                         break;
                     case JCConstant.PICK_TYPE_FILE:
                         pickItemStr = getContext().getResources().getString(R.string.jc_file);
+                        if(JCPickerClient.getDefaultInstance(getContext()).isAllowSelectDir()
+                                && !JCPickerClient.getDefaultInstance(getContext()).isAllowSelectFile())
+                        {
+                            pickItemStr = getContext().getResources().getString(R.string.jc_directory);
+                        }
                         break;
                 }
                 if(adapter.getSelectedFiles().size() > 1){
-                    pickItemStr += "s";
+                    if(JCPickerClient.getDefaultInstance(getContext()).isAllowSelectDir()
+                            && !JCPickerClient.getDefaultInstance(getContext()).isAllowSelectFile())
+                    {
+                        pickItemStr = getContext().getResources().getString(R.string.jc_directories);
+                    }
+                    else{
+                        pickItemStr += "s";
+                    }
+
                 }
 
                 toolbar.setSubtitle(String.format("%d %s selected", adapter.getSelectedFiles().size(), pickItemStr));
@@ -207,6 +220,11 @@ public class JCPickerBaseFileListFragment extends JCPickerBaseFragment implement
                     break;
                 case JCConstant.PICK_TYPE_FILE:
                     title = getContext().getResources().getString(R.string.jc_slide_menu_file_title);
+                    if(JCPickerClient.getDefaultInstance(getContext()).isAllowSelectDir()
+                            && !JCPickerClient.getDefaultInstance(getContext()).isAllowSelectFile())
+                    {
+                        title = getContext().getResources().getString(R.string.jc_directory);
+                    }
                     break;
             }
         }

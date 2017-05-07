@@ -5,6 +5,8 @@
 
     <string name="jc_slide_menu_image_title">Images</string>
     <string name="jc_slide_menu_file_title">Files</string>
+    <string name="jc_directory">Directory</string>
+    <string name="jc_directories">Directories</string>
 
     <string name="jc_file">file</string>
     <string name="jc_image">image</string>

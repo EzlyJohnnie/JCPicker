@@ -14,11 +14,13 @@ public class JCConstant {
 
     @IntDef({PICK_SOURCE_IMAGE,
             PICK_SOURCE_FILE,
-            PICK_SOURCE_DIRECTORY})
+            PICK_SOURCE_DIRECTORY,
+            PICK_SOURCE_ALL})
     public @interface PickSource{}
     public static final int PICK_SOURCE_IMAGE = 0;
     public static final int PICK_SOURCE_FILE = 1;
     public static final int PICK_SOURCE_DIRECTORY = 2;
+    public static final int PICK_SOURCE_ALL = 3;
 
 
     public static final int REQUEST_CODE = 11011;

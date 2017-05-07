@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 import nz.co.jclib.jcpicklib.JCPickerClient;
 import nz.co.jclib.jcpicklib.data.model.JCFile;
-import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.utils.JCConstant;
 
 public class MainActivity extends AppCompatActivity implements JCPickerClient.JCPickerListener{
@@ -33,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
             @Override
             public void onClick(View view) {
                 final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
-                        .setPickerType(JCConstant.PICK_TYPE_IMAGE)
-                        .setMaxSelectedItemCount(3)
-                        .addPickSource(JCConstant.PICK_SOURCE_DIRECTORY)
+//                        .setLandingPickerType(JCConstant.PICK_TYPE_IMAGE)
+//                        .setMaxSelectedItemCount(3)
+//                        .addPickSource(JCConstant.PICK_SOURCE_FILE)
                         .build();
 
                 client.startPickerActivity(MainActivity.this, MainActivity.this);
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
             @Override
             public void onClick(View view) {
                 final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
-                        .setPickerType(JCConstant.PICK_TYPE_IMAGE)
+                        .setLandingPickerType(JCConstant.PICK_TYPE_IMAGE)
                         .setMaxSelectedItemCount(1)
                         .build();
 

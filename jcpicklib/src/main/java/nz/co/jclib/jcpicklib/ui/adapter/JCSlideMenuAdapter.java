@@ -2,12 +2,16 @@ package nz.co.jclib.jcpicklib.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.ArraySet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
+import nz.co.jclib.jcpicklib.JCPickerClient;
 import nz.co.jclib.jcpicklib.R;
 import nz.co.jclib.jcpicklib.ui.adapter.viewHolder.JCSlideMenuItem;
 
@@ -16,23 +20,34 @@ import nz.co.jclib.jcpicklib.ui.adapter.viewHolder.JCSlideMenuItem;
  */
 public final class JCSlideMenuAdapter extends RecyclerView.Adapter {
 
-    private String[] itemTitles;
-    private int[] itemIcons;
+    private ArrayList<String> itemTitles;
+    private ArrayList<Integer> itemIcons;
     private int selectedMenuIndex;
 
     private SlideMenuItemClickedListener mListener;
 
     public JCSlideMenuAdapter(Context context, int selectedMenuIndex) {
         this.selectedMenuIndex = selectedMenuIndex;
-        this.itemTitles = new String[]{
-                context.getResources().getString(R.string.jc_slide_menu_image_title),
-                context.getResources().getString(R.string.jc_slide_menu_file_title)
-        };
+        itemTitles = new ArrayList<>();
+        itemIcons = new ArrayList<>();
 
-        this.itemIcons = new int[]{
-            R.drawable.jcpick_no_image_icon,
-            R.drawable.jcpick_no_file_icon
-        };
+        if(JCPickerClient.getDefaultInstance(context).isAllowSelectImage()){
+            this.itemTitles.add(context.getResources().getString(R.string.jc_slide_menu_image_title));
+            this.itemIcons.add(R.drawable.jcpick_no_image_icon);
+        }
+
+        if(JCPickerClient.getDefaultInstance(context).isAllowSelectDir()
+                || JCPickerClient.getDefaultInstance(context).isAllowSelectFile())
+        {
+            boolean isSelectDirectoryOnly = JCPickerClient.getDefaultInstance(context).isAllowSelectDir()
+                    && !JCPickerClient.getDefaultInstance(context).isAllowSelectFile();
+            this.itemTitles.add(context.getResources().getString(isSelectDirectoryOnly ? R.string.jc_directory : R.string.jc_slide_menu_file_title));
+            this.itemIcons.add(R.drawable.jcpick_no_file_icon);
+        }
+
+        if(this.itemTitles.size() == 1){
+            this.selectedMenuIndex = 0;
+        }
     }
 
     public void setListener(SlideMenuItemClickedListener Listener) {
@@ -51,13 +66,13 @@ public final class JCSlideMenuAdapter extends RecyclerView.Adapter {
         Context context = viewHolder.itemView.getContext();
 
         Picasso.with(context)
-                .load(itemIcons[position])
+                .load(itemIcons.get(position))
                 .fit()
                 .centerInside()
                 .into(viewHolder.ivIcon);
 
-        viewHolder.txtTitle.setText(itemTitles[position]);
-        viewHolder.bottomDivider.setVisibility(position == itemTitles.length - 1 ? View.GONE : View.VISIBLE);
+        viewHolder.txtTitle.setText(itemTitles.get(position));
+        viewHolder.bottomDivider.setVisibility(position == itemTitles.size() - 1 ? View.GONE : View.VISIBLE);
 
         viewHolder.itemView.setBackgroundDrawable(context.getResources().getDrawable(selectedMenuIndex == position ?  R.drawable.selected_clickable_item_bg_color : R.drawable.clickable_item_bg_color));
 
@@ -83,7 +98,7 @@ public final class JCSlideMenuAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return itemTitles.length;
+        return itemTitles.size();
     }
 
 

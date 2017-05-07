@@ -19,19 +19,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a9769c1-cf58-4005-8eb4-bf72f90be65d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/build.gradle" afterPath="$PROJECT_DIR$/jcpicklib/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/jcpicklib.iml" afterPath="$PROJECT_DIR$/jcpicklib/jcpicklib.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/viewHolder/JCFileListItem.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/viewHolder/JCFileListItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java" afterPath="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/layout/item_file.xml" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/layout/item_file.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" />
     </list>
     <ignored path="JCPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,41 +62,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JCPickerClient.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JCPickerClient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="157">
+              <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1357#1358#0" expanded="false" />
-                <element signature="e#1388#1389#0" expanded="false" />
-                <element signature="e#1432#1433#0" expanded="false" />
-                <element signature="e#1475#1476#0" expanded="false" />
-                <element signature="e#1578#1579#0" expanded="false" />
-                <element signature="e#1626#1627#0" expanded="false" />
-                <element signature="e#2671#2672#0" expanded="false" />
-                <element signature="e#2714#2715#0" expanded="false" />
-                <marker date="1494126535000" expanded="true" signature="1786:1860" ph="{...}" />
-                <marker date="1494126535000" expanded="true" signature="3924:4071" ph="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JCBaseFileListAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java">
+      <file leaf-file-name="JCPickerEnterOption.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCPickerEnterOption.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="115" column="82" selection-start-line="115" selection-start-column="82" selection-end-line="115" selection-end-column="82" />
+            <state relative-caret-position="161">
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5060#5268#0" expanded="true" />
-                <element signature="e#5267#5268#0" expanded="true" />
-                <element signature="e#6605#8496#0" expanded="true" />
-                <element signature="e#8495#8496#0" expanded="true" />
-                <element signature="e#8604#9337#0" expanded="true" />
-                <element signature="e#9336#9337#0" expanded="true" />
+                <element signature="e#1470#1471#0" expanded="true" />
+                <element signature="e#1510#1511#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JCPreferenceHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCPreferenceHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JCFilePickerFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/filePicker/JCFilePickerFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+              <folding>
+                <element signature="e#1252#1253#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,7 +113,7 @@
       <file leaf-file-name="JCFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
+            <state relative-caret-position="705">
               <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
@@ -119,30 +123,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JCFileProvider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="137" column="13" selection-start-line="137" selection-start-column="13" selection-end-line="137" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jcpicklib/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+            <state relative-caret-position="248">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -151,37 +133,49 @@
       <file leaf-file-name="JCPickerBaseFileListFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="388" column="0" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="174" column="21" selection-start-line="170" selection-start-column="20" selection-end-line="174" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#5534#5590#0" expanded="false" />
-                <element signature="e#5713#5768#0" expanded="false" />
-                <element signature="e#6108#6352#0" expanded="false" />
-                <element signature="e#6351#6352#0" expanded="false" />
-                <element signature="e#6512#6751#0" expanded="false" />
-                <element signature="e#6750#6751#0" expanded="false" />
-                <element signature="e#6898#7125#0" expanded="false" />
-                <element signature="e#7124#7125#0" expanded="false" />
-                <element signature="e#7418#7491#0" expanded="false" />
-                <element signature="e#7596#7668#0" expanded="false" />
-                <element signature="e#8588#8589#0" expanded="false" />
-                <element signature="e#8636#8637#0" expanded="false" />
-                <element signature="e#9509#9666#0" expanded="false" />
-                <element signature="e#9665#9666#0" expanded="false" />
-                <element signature="e#10022#10023#0" expanded="false" />
-                <element signature="e#10068#10069#0" expanded="false" />
-                <element signature="e#10603#10775#0" expanded="false" />
-                <element signature="e#10774#10775#0" expanded="false" />
-                <element signature="e#11076#11077#0" expanded="false" />
-                <element signature="e#11105#11106#0" expanded="false" />
-                <element signature="e#11611#11749#0" expanded="false" />
-                <element signature="e#11748#11749#0" expanded="false" />
-                <element signature="e#11873#12012#0" expanded="false" />
-                <element signature="e#12011#12012#0" expanded="false" />
-                <element signature="e#13698#13714#0" expanded="false" />
-                <element signature="e#13717#13734#0" expanded="false" />
+                <element signature="e#6037#6097#0" expanded="true" />
+                <element signature="e#6484#6546#0" expanded="true" />
+                <element signature="e#8341#8413#0" expanded="true" />
+                <element signature="e#8660#8720#0" expanded="true" />
+                <element signature="e#14567#14616#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JCPickerHostFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-463">
+              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JCSlideMenuAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+              <folding>
+                <element signature="e#1058#1126#0" expanded="true" />
+                <element signature="e#1654#1675#0" expanded="true" />
+                <element signature="e#1678#1711#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="32" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2710,24 +2704,24 @@
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/layout/item_slide_menu.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/drawable/selected_clickable_item_bg_color.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/layout/jc_slide_menu.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java" />
         <option value="$PROJECT_DIR$/jcpicklib/build/generated/source/buildConfig/debug/nz/co/jclib/jcpicklib/BuildConfig.java" />
         <option value="$PROJECT_DIR$/jcpicklib/build/intermediates/res/merged/release/values/values.xml" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/layout/fragment_image_preview.xml" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/res/layout/host_fragment.xml" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/preview/JCImagePreviewFragment.java" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java" />
-        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java" />
         <option value="$PROJECT_DIR$/jcpicklib/build.gradle" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/viewHolder/JCFileListItem.java" />
         <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java" />
+        <option value="$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java" />
       </list>
     </option>
   </component>
@@ -3870,7 +3864,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java</url>
-          <line>396</line>
+          <line>414</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -3892,23 +3886,24 @@
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/res/layout/fragment_image_preview.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3945,17 +3940,7 @@
         <state relative-caret-position="0">
           <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1357#1358#0" expanded="false" />
-            <element signature="e#1388#1389#0" expanded="false" />
-            <element signature="e#1432#1433#0" expanded="false" />
-            <element signature="e#1475#1476#0" expanded="false" />
-            <element signature="e#1578#1579#0" expanded="false" />
-            <element signature="e#1626#1627#0" expanded="false" />
-            <element signature="e#2671#2672#0" expanded="false" />
-            <element signature="e#2714#2715#0" expanded="false" />
-            <marker date="1494126535000" expanded="true" signature="1786:1860" ph="{...}" />
-            <marker date="1494126535000" expanded="true" signature="3924:4071" ph="{...}" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3965,33 +3950,11 @@
         <state relative-caret-position="0">
           <caret line="362" column="22" selection-start-line="362" selection-start-column="22" selection-end-line="362" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5534#5590#0" expanded="false" />
-            <element signature="e#5713#5768#0" expanded="false" />
-            <element signature="e#6108#6352#0" expanded="false" />
-            <element signature="e#6351#6352#0" expanded="false" />
-            <element signature="e#6512#6751#0" expanded="false" />
-            <element signature="e#6750#6751#0" expanded="false" />
-            <element signature="e#6898#7125#0" expanded="false" />
-            <element signature="e#7124#7125#0" expanded="false" />
-            <element signature="e#7418#7491#0" expanded="false" />
-            <element signature="e#7596#7668#0" expanded="false" />
-            <element signature="e#8588#8589#0" expanded="false" />
-            <element signature="e#8636#8637#0" expanded="false" />
-            <element signature="e#9509#9666#0" expanded="false" />
-            <element signature="e#9665#9666#0" expanded="false" />
-            <element signature="e#10022#10023#0" expanded="false" />
-            <element signature="e#10068#10069#0" expanded="false" />
-            <element signature="e#10603#10775#0" expanded="false" />
-            <element signature="e#10774#10775#0" expanded="false" />
-            <element signature="e#11076#11077#0" expanded="false" />
-            <element signature="e#11105#11106#0" expanded="false" />
-            <element signature="e#11611#11749#0" expanded="false" />
-            <element signature="e#11748#11749#0" expanded="false" />
-            <element signature="e#11873#12012#0" expanded="false" />
-            <element signature="e#12011#12012#0" expanded="false" />
-            <element signature="e#13698#13714#0" expanded="false" />
-            <element signature="e#13717#13734#0" expanded="false" />
+            <element signature="e#6037#6097#0" expanded="true" />
+            <element signature="e#6484#6546#0" expanded="true" />
+            <element signature="e#8341#8413#0" expanded="true" />
+            <element signature="e#8660#8720#0" expanded="true" />
+            <element signature="e#14567#14616#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4099,13 +4062,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/res/drawable/selected_clickable_item_bg_color.xml" />
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="61" column="148" selection-start-line="61" selection-start-column="148" selection-end-line="61" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCFileListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4120,14 +4076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/base/JCPickerBaseFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4135,25 +4083,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/filePicker/JCFilePickerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/imagePicker/JCAlbumPickerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="113" column="9" selection-start-line="107" selection-start-column="8" selection-end-line="113" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4211,69 +4144,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCPickerEnterOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="26" />
-          <folding>
-            <element signature="e#1470#1471#0" expanded="false" />
-            <element signature="e#1510#1511#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="388" column="0" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5534#5590#0" expanded="false" />
-            <element signature="e#5713#5768#0" expanded="false" />
-            <element signature="e#6108#6352#0" expanded="false" />
-            <element signature="e#6351#6352#0" expanded="false" />
-            <element signature="e#6512#6751#0" expanded="false" />
-            <element signature="e#6750#6751#0" expanded="false" />
-            <element signature="e#6898#7125#0" expanded="false" />
-            <element signature="e#7124#7125#0" expanded="false" />
-            <element signature="e#7418#7491#0" expanded="false" />
-            <element signature="e#7596#7668#0" expanded="false" />
-            <element signature="e#8588#8589#0" expanded="false" />
-            <element signature="e#8636#8637#0" expanded="false" />
-            <element signature="e#9509#9666#0" expanded="false" />
-            <element signature="e#9665#9666#0" expanded="false" />
-            <element signature="e#10022#10023#0" expanded="false" />
-            <element signature="e#10068#10069#0" expanded="false" />
-            <element signature="e#10603#10775#0" expanded="false" />
-            <element signature="e#10774#10775#0" expanded="false" />
-            <element signature="e#11076#11077#0" expanded="false" />
-            <element signature="e#11105#11106#0" expanded="false" />
-            <element signature="e#11611#11749#0" expanded="false" />
-            <element signature="e#11748#11749#0" expanded="false" />
-            <element signature="e#11873#12012#0" expanded="false" />
-            <element signature="e#12011#12012#0" expanded="false" />
-            <element signature="e#13698#13714#0" expanded="false" />
-            <element signature="e#13717#13734#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -4309,26 +4179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1357#1358#0" expanded="false" />
-            <element signature="e#1388#1389#0" expanded="false" />
-            <element signature="e#1432#1433#0" expanded="false" />
-            <element signature="e#1475#1476#0" expanded="false" />
-            <element signature="e#1578#1579#0" expanded="false" />
-            <element signature="e#1626#1627#0" expanded="false" />
-            <element signature="e#2671#2672#0" expanded="false" />
-            <element signature="e#2714#2715#0" expanded="false" />
-            <marker date="1494126535000" expanded="true" signature="1786:1860" ph="{...}" />
-            <marker date="1494126535000" expanded="true" signature="3924:4071" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/JCFileProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -4336,14 +4186,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4374,18 +4216,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCBaseFileListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="115" column="82" selection-start-line="115" selection-start-column="82" selection-end-line="115" selection-end-column="82" />
+        <state relative-caret-position="189">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5060#5268#0" expanded="true" />
@@ -4394,6 +4228,120 @@
             <element signature="e#8495#8496#0" expanded="true" />
             <element signature="e#8604#9337#0" expanded="true" />
             <element signature="e#9336#9337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/JCPickerBaseFileListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="174" column="21" selection-start-line="170" selection-start-column="20" selection-end-line="174" selection-end-column="21" />
+          <folding>
+            <element signature="e#6037#6097#0" expanded="true" />
+            <element signature="e#6484#6546#0" expanded="true" />
+            <element signature="e#8341#8413#0" expanded="true" />
+            <element signature="e#8660#8720#0" expanded="true" />
+            <element signature="e#14567#14616#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/fragment/filePicker/JCFilePickerFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding>
+            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/utils/JCPreferenceHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/data/model/JCPickerEnterOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding>
+            <element signature="e#1470#1471#0" expanded="true" />
+            <element signature="e#1510#1511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/JCPickerHostFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-463">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/ui/adapter/JCSlideMenuAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+          <folding>
+            <element signature="e#1058#1126#0" expanded="true" />
+            <element signature="e#1654#1675#0" expanded="true" />
+            <element signature="e#1678#1711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nz/co/jclib/jcpicker/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jcpicklib/src/main/java/nz/co/jclib/jcpicklib/JCPickerClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
