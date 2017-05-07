@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
             public void onClick(View view) {
                 final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
                         .setPickerType(JCConstant.PICK_TYPE_IMAGE)
-                        .setMaxSelectedItemCount(1)
-                        .setAllowSelectDir(true)
+                        .setMaxSelectedItemCount(3)
+                        .addPickSource(JCConstant.PICK_SOURCE_DIRECTORY)
                         .build();
 
                 client.startPickerActivity(MainActivity.this, MainActivity.this);
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements JCPickerClient.JC
                 final JCPickerClient client = JCPickerClient.Builder(MainActivity.this)
                         .setPickerType(JCConstant.PICK_TYPE_IMAGE)
                         .setMaxSelectedItemCount(1)
-                        .setAllowSelectDir(true)
                         .build();
 
                 getSupportFragmentManager().beginTransaction()

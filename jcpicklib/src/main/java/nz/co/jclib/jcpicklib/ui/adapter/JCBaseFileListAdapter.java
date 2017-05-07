@@ -1,16 +1,12 @@
 package nz.co.jclib.jcpicklib.ui.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -108,6 +104,7 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         final JCFileListItem viewHolder = (JCFileListItem) holder;
         final JCFile file = files.get(position);
         final Context context = holder.itemView.getContext();
+        boolean shouldDisableInteraction = shouldDisableInteraction(context, file);
 
         boolean hasFileBeenSelected = FileUtils.isFileExistInGivenFiles(file, selectedFiles);
         if(hasFileBeenSelected){
@@ -117,14 +114,23 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
         if(viewHolder.txt_size != null){
             viewHolder.txt_size.setVisibility(file.isFolder() ? View.GONE: View.VISIBLE);
             viewHolder.txt_size.setText(FileUtils.getSizeString(file.getSize(), false));
+            viewHolder.txt_size.setTextColor(context.getResources().getColor(
+                    shouldDisableInteraction ? R.color.jc_divider_color : R.color.jc_light_grey));
         }
 
         if(viewHolder.txt_name != null){
             viewHolder.txt_name.setText(file.getName());
+            viewHolder.txt_name.setTextColor(context.getResources().getColor(
+                    shouldDisableInteraction ? R.color.jc_divider_color : R.color.jc_file_name_color));
         }
 
+
+
         if(viewHolder.checkBox != null){
-            if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir() || JCPickerClient.getDefaultInstance(context).isSinglePicking()){
+            if(shouldDisableInteraction
+                    || JCPickerClient.getDefaultInstance(context).isSinglePicking()
+                    || file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir())
+            {
                 viewHolder.checkBox.setVisibility(View.GONE);
             }
             else{
@@ -133,26 +139,14 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
 
             viewHolder.setSelect(file.isSelected());
 
-            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    file.setSelected(true);
-                    if(file.isSelected()){
-                        selectedFiles.add(file);
+            if(!shouldDisableInteraction) {
+                viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewHolder.itemView.performClick();
                     }
-                    else{
-                        file.setSelected(false);
-                        selectedFiles.remove(file);
-                    }
-                }
-            });
-
-            viewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    viewHolder.itemView.performClick();
-                }
-            });
+                });
+            }
         }
 
         if(viewHolder.overlay != null){
@@ -190,68 +184,76 @@ public class JCBaseFileListAdapter extends RecyclerView.Adapter {
             });
         }
 
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mFileListAdapterListener != null){
-                    if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir()
-                            || file.isAlbum()){
-                        mFileListAdapterListener.onOpenFolder(file, position);
-                    }else{
-                        if(JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount() > 0
-                                && selectedFiles.size() >= JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount())
-                        {
-                            if(mFileListAdapterListener != null){
-                                mFileListAdapterListener.onSelectedItemReachLimitation();
-                            }
-                            return;
-                        }
-
-                        file.setSelected(!file.isSelected());
-                        if(file.isSelected()){
-                            selectedFiles.add(file);
-                        }
-                        else{
-                            selectedFiles.remove(file);
-                        }
-                        viewHolder.setSelect(file.isSelected());
-                        if(viewHolder.overlay != null){
-                            viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
-                        }
-
-                        if(mFileListAdapterListener != null){
-                            mFileListAdapterListener.onItemSelected(selectedFiles);
-                        }
-                    }
-                }
-            }
-        });
-
-
-        if(file.isImage() && !file.isAlbum()){
-            viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+        if(!shouldDisableInteraction){
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View v) {
+                public void onClick(View v) {
                     if(mFileListAdapterListener != null){
-                        mFileListAdapterListener.onOpenImage(file, position);
+                        if(file.isFolder() && !JCPickerClient.getDefaultInstance(context).isAllowSelectDir()
+                                || file.isAlbum()){
+                            mFileListAdapterListener.onOpenFolder(file, position);
+                        }else{
+                            if(JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount() > 0
+                                    && selectedFiles.size() >= JCPickerClient.getDefaultInstance(context).getMaxSelectedItemCount()
+                                    && !file.isSelected())
+                            {
+                                if(mFileListAdapterListener != null){
+                                    mFileListAdapterListener.onSelectedItemReachLimitation();
+                                }
+                                return;
+                            }
+
+                            file.setSelected(!file.isSelected());
+                            if(file.isSelected()){
+                                selectedFiles.add(file);
+                            }
+                            else{
+                                selectedFiles.remove(file);
+                            }
+                            viewHolder.setSelect(file.isSelected());
+                            if(viewHolder.overlay != null){
+                                viewHolder.overlay.setVisibility(file.isSelected() ? View.GONE : View.VISIBLE);
+                            }
+
+                            if(mFileListAdapterListener != null){
+                                mFileListAdapterListener.onItemSelected(selectedFiles);
+                            }
+                        }
                     }
-                    return false;
                 }
             });
         }
-        else if(file.isFolder() && JCPickerClient.getDefaultInstance(context).isAllowSelectDir()){
+
+        if(!shouldDisableInteraction){
             viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    if(mFileListAdapterListener != null){
-                        mFileListAdapterListener.onOpenFolder(file, position);
+                    if(file.isImage() && !file.isAlbum()){
+                        if(mFileListAdapterListener != null){
+                            mFileListAdapterListener.onOpenImage(file, position);
+                        }
                     }
+                    else if(file.isFolder() && JCPickerClient.getDefaultInstance(context).isAllowSelectDir()){
+                        if(mFileListAdapterListener != null){
+                            mFileListAdapterListener.onOpenFolder(file, position);
+                        }
+                    }
+
                     return false;
                 }
             });
+
         }
     }
 
+    private boolean shouldDisableInteraction(Context context, JCFile file) {
+        boolean shouldHandleClick = false;
+        if(file.isFile() && !JCPickerClient.getDefaultInstance(context).isAllowSelectFile()){
+            shouldHandleClick = true;
+        }
+        return shouldHandleClick;
+    }
+    
     protected int getFileIconPlaceHolder(JCFile file){
         return file.isImage() ?  R.drawable.jcpick_placeholder : file.getFileImageResID();
     }

@@ -12,6 +12,15 @@ public class JCConstant {
     public static final int PICK_TYPE_IMAGE = 0;
     public static final int PICK_TYPE_FILE = 1;
 
+    @IntDef({PICK_SOURCE_IMAGE,
+            PICK_SOURCE_FILE,
+            PICK_SOURCE_DIRECTORY})
+    public @interface PickSource{}
+    public static final int PICK_SOURCE_IMAGE = 0;
+    public static final int PICK_SOURCE_FILE = 1;
+    public static final int PICK_SOURCE_DIRECTORY = 2;
+
+
     public static final int REQUEST_CODE = 11011;
 
 

@@ -30,7 +30,7 @@ public class JCFileListItem extends RecyclerView.ViewHolder {
         iv_icon = (ImageView) view.findViewById(R.id.iv_file_icon);
         txt_name = (TextView) view.findViewById(R.id.txt_file_name);
         checkBox = (ImageView) view.findViewById(R.id.check_box);
-        txt_size = (TextView) view.findViewById(R.id.txt_folder_size);
+        txt_size = (TextView) view.findViewById(R.id.txt_file_size);
         bottomDivider = view.findViewById(R.id.bottom_divider);
     }
 

@@ -128,12 +128,14 @@ public class JCFileProvider {
         File folder = getFolderFromPath(context, path);
         File[] childFiles = folder.listFiles();
         for(File childFile : childFiles){
-            JCFile file = new JCFile();
-            file.setName(childFile.getName());
-            file.setSize(childFile.length());
-            file.setUrl(childFile.getAbsolutePath());
+            if(childFile.canRead()){
+                JCFile file = new JCFile();
+                file.setName(childFile.getName());
+                file.setSize(childFile.length());
+                file.setUrl(childFile.getAbsolutePath());
 
-            files.add(file);
+                files.add(file);
+            }
         }
 
         return files;

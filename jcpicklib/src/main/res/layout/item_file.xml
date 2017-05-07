@@ -30,7 +30,7 @@
         android:padding="10dp">
 
         <nz.co.jclib.jcpicklib.ui.Widget.JCTextView
-            android:id="@+id/txt_folder_size"
+            android:id="@+id/txt_file_size"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"

@@ -11,17 +11,21 @@ import nz.co.jclib.jcpicklib.data.model.JCFile;
 import nz.co.jclib.jcpicklib.data.model.JCPickerEnterOption;
 import nz.co.jclib.jcpicklib.ui.JCPickerActivity;
 import nz.co.jclib.jcpicklib.ui.JCPickerHostFragment;
+import nz.co.jclib.jcpicklib.utils.JCConstant;
 
 /**
  * Created by Johnnie on 28/03/17.
  */
 public class JCPickerClient {
+    private static final int MAX_SELECTED_ITEM_COUNT_UNLIMITED = -1;
+    private static final int MAX_SELECTED_ITEM_COUNT_UNDEFINED = -999;
 
     private static JCPickerClient instance;
     private JCPickerListener mListener;
     private JCPickerEnterOption enterOption;
-    private int maxSelectedItemCount;
-    private boolean isAllowSelectDir;
+    private int maxSelectedItemCount = MAX_SELECTED_ITEM_COUNT_UNLIMITED;
+    private int pickSource;
+    private ArrayList<Integer> pickSources;
 
     public static JCPickerClient getDefaultInstance(Context context){
         if(instance == null){
@@ -33,6 +37,7 @@ public class JCPickerClient {
 
     private JCPickerClient(Context context) {
         enterOption = JCPickerEnterOption.createDefaultOption(context);
+        pickSources = new ArrayList<>();
     }
 
     public static void reset(){
@@ -52,7 +57,15 @@ public class JCPickerClient {
     }
 
     public boolean isAllowSelectDir() {
-        return isAllowSelectDir;
+        return pickSources.contains(JCConstant.PICK_SOURCE_DIRECTORY);
+    }
+
+    public boolean isAllowSelectImage(){
+        return pickSources.contains(JCConstant.PICK_SOURCE_IMAGE);
+    }
+
+    public boolean isAllowSelectFile(){
+        return pickSources.contains(JCConstant.PICK_SOURCE_FILE);
     }
 
     public Fragment getPickerFragment(JCPickerListener listener){
@@ -85,12 +98,13 @@ public class JCPickerClient {
 
     public static class Builder{
         private JCPickerEnterOption enterOption;
-        private int maxSelectedItemCount = -1;
-        private boolean isAllowSelectDir;
+        private int maxSelectedItemCount = MAX_SELECTED_ITEM_COUNT_UNDEFINED;
+        private ArrayList<Integer> pickSources;
         private Context context;
 
         public Builder(Context context) {
             this.context = context;
+            pickSources = new ArrayList<>();
         }
 
         public Builder setEnterOption(JCPickerEnterOption enterOption) {
@@ -117,8 +131,15 @@ public class JCPickerClient {
             return this;
         }
 
-        public Builder setAllowSelectDir(boolean allowSelectDir) {
-            isAllowSelectDir = allowSelectDir;
+        public Builder addPickSource(@JCConstant.PickSource int pickSource) {
+            if(!pickSources.contains(pickSource)) {
+                pickSources.add(pickSource);
+            }
+            return this;
+        }
+
+        public Builder removePickSource(@JCConstant.PickSource int pickSource) {
+            pickSources.remove(pickSource);
             return this;
         }
 
@@ -127,8 +148,15 @@ public class JCPickerClient {
             if(enterOption != null){
                 instance.enterOption = enterOption;
             }
-            instance.maxSelectedItemCount = maxSelectedItemCount;
-            instance.isAllowSelectDir = isAllowSelectDir;
+
+            if(maxSelectedItemCount != MAX_SELECTED_ITEM_COUNT_UNDEFINED){
+                instance.maxSelectedItemCount = maxSelectedItemCount;
+            }
+
+            if(pickSources != null && pickSources.size() > 0){
+                instance.pickSources = pickSources;
+            }
+
             return instance;
         }
     }

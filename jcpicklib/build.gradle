@@ -34,6 +34,11 @@ android {
         exclude 'META-INF/maven/commons-io/commons-io/pom.xml'
         exclude 'META-INF/maven/commons-io/commons-io/pom.properties'
     }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 }
 
 repositories {
